@@ -33,7 +33,7 @@ basic table tools.
 Install
 ========
 
-pip install tabel
+pip install tabl
 
 Quickstart
 ===========
@@ -43,11 +43,11 @@ init
 
 To setup a Tabel:
 
->>> from tabel import Tabel
->>> tbl = Tabel([ ["John", "Joe", "Jane"],
+>>> from tabl import Tabel
+>>> tabl = Tabel([ ["John", "Joe", "Jane"],
 ...                [1.82,1.65,2.15],
 ...                [False,False,True]], columns = ["Name", "Height", "Married"])
->>> tbl
+>>> tabl
  Name   |   Height |   Married
 --------+----------+-----------
  John   |     1.82 |         0
@@ -65,7 +65,7 @@ slice
 
 Slicing can be done the numpy way, always returning Tabel objects:
 
->>> tbl[1:3,[0,2]]
+>>> tabl[1:3,[0,2]]
  Name   |   Married
 --------+-----------
  Joe    |         0
@@ -76,18 +76,18 @@ Slices will always return a Tabel except in three distinct cases, when:
 
 1. explicitly one column is requested, a numpy array is returned:
 
->>> tbl[1:3,'Name']       # doctest: +SKIP
+>>> tabl[1:3,'Name']       # doctest: +SKIP
 array(['Joe', 'Jane'],
       dtype='<U4')
 
 2. explicitly one row is requested, a tuple is returned:
 
->>> tbl[0,:]
+>>> tabl[0,:]
 ('John', 1.82, False)
 
 3. explicitly one element is requested:
 
->>> tbl[0,'Name']
+>>> tabl[0,'Name']
 'John'
 
 In general, slicing is intuitive and does not deviate from what would expect
@@ -99,9 +99,9 @@ set
 
 Setting elements works the same as slicing:
 
->>> tbl = Tabel({'Name' : ["John", "Joe", "Jane"], 'Height' : [1.82,1.65,2.15], 'Married': [False,False,True]})
->>> tbl[0,"Name"] = "Jos"
->>> tbl
+>>> tabl = Tabel({'Name' : ["John", "Joe", "Jane"], 'Height' : [1.82,1.65,2.15], 'Married': [False,False,True]})
+>>> tabl[0,"Name"] = "Jos"
+>>> tabl
  Name   |   Height |   Married
 --------+----------+-----------
  Jos    |     1.82 |         0
@@ -114,9 +114,9 @@ slice would result into.
 
 Adding columns, works the same as setting elements, just give it a new name:
 
->>> tbl = Tabel({'Name' : ["John", "Joe", "Jane"], 'Height' : [1.82,1.65,2.15], 'Married': [False,False,True]})
->>> tbl['new'] = [1,2,3]
->>> tbl
+>>> tabl = Tabel({'Name' : ["John", "Joe", "Jane"], 'Height' : [1.82,1.65,2.15], 'Married': [False,False,True]})
+>>> tabl['new'] = [1,2,3]
+>>> tabl
  Name   |   Height |   Married |   new
 --------+----------+-----------+-------
  John   |     1.82 |         0 |     1
@@ -126,9 +126,9 @@ Adding columns, works the same as setting elements, just give it a new name:
 
 Or set the whole column to the same value:
 
->>> tbl = Tabel({'Name' : ["John", "Joe", "Jane"], 'Height' : [1.82,1.65,2.15], 'Married': [False,False,True]})
->>> tbl['new'] = 13
->>> tbl
+>>> tabl = Tabel({'Name' : ["John", "Joe", "Jane"], 'Height' : [1.82,1.65,2.15], 'Married': [False,False,True]})
+>>> tabl['new'] = 13
+>>> tabl
  Name   |   Height |   Married |   new
 --------+----------+-----------+-------
  John   |     1.82 |         0 |    13
@@ -144,9 +144,9 @@ append Tabel and row
 
 Tabels can be appended with other Tabels:
 
->>> tbl = Tabel({'Name' : ["John", "Joe", "Jane"], 'Height' : [1.82,1.65,2.15], 'Married': [False,False,True]})
->>> tbl += tbl
->>> tbl
+>>> tabl = Tabel({'Name' : ["John", "Joe", "Jane"], 'Height' : [1.82,1.65,2.15], 'Married': [False,False,True]})
+>>> tabl += tabl
+>>> tabl
  Name   |   Height |   Married
 --------+----------+-----------
  John   |     1.82 |         0
@@ -159,9 +159,9 @@ Tabels can be appended with other Tabels:
 
 Or append rows as dictionary:
 
->>> tbl = Tabel({'Name' : ["John", "Joe", "Jane"], 'Height' : [1.82,1.65,2.15], 'Married': [False,False,True]})
->>> tbl.row_append({'Height':1.81, 'Name':"Jack", 'Married':True})
->>> tbl
+>>> tabl = Tabel({'Name' : ["John", "Joe", "Jane"], 'Height' : [1.82,1.65,2.15], 'Married': [False,False,True]})
+>>> tabl.row_append({'Height':1.81, 'Name':"Jack", 'Married':True})
+>>> tabl
  Name   |   Height |   Married
 --------+----------+-----------
  John   |     1.82 |         0
@@ -177,18 +177,18 @@ instance properties
 Your data is simply stored as a list of numpy arrays and can be accessed or
 manipulated like that (just don't make a mess):
 
->>> tbl = Tabel({'Name' : ["John", "Joe", "Jane"], 'Height' : [1.82,1.65,2.15], 'Married': [False,False,True]})
->>> tbl.columns
+>>> tabl = Tabel({'Name' : ["John", "Joe", "Jane"], 'Height' : [1.82,1.65,2.15], 'Married': [False,False,True]})
+>>> tabl.columns
 ['Name', 'Height', 'Married']
->>> tbl.data        # doctest: +SKIP
+>>> tabl.data        # doctest: +SKIP
 [array(['John', 'Joe', 'Jane'],
       dtype='<U4'), array([ 1.82,  1.65,  2.15]), array([False, False,  True], dtype=bool)]
 
 Further the basic means to asses the size of your data:
 
->>> tbl.shape
+>>> tabl.shape
 (3, 3)
->>> len(tbl)
+>>> len(tabl)
 3
 
 pandas
@@ -207,8 +207,8 @@ is easy:
 
 To make a Tabel from a DataFrame, just supply it to the initialize:
 
->>> tbl = Tabel(df)
->>> tbl
+>>> tabl = Tabel(df)
+>>> tabl
    a |   b
 -----+-----
    0 |  10
@@ -218,7 +218,7 @@ To make a Tabel from a DataFrame, just supply it to the initialize:
 
 The dict property of Tabel provides a way to make a DataFrame from a Tabel:
 
->>> df = pd.DataFrame(tbl.dict)
+>>> df = pd.DataFrame(tabl.dict)
 >>> df
    a   b
 0  0  10
@@ -229,41 +229,41 @@ The dict property of Tabel provides a way to make a DataFrame from a Tabel:
 Resources & getting help
 ==========================
 
-* See for the full API and more examples the documentation on `RTD <https://tabel.readthedocs.io/en/stable/index.html>`_.
-* The repository on `Github <https://github.com/BastiaanBergman/tabel>`_.
-* Installables on `pip <https://pypi.org/project/tabel/>`_.
+* See for the full API and more examples the documentation on `RTD <https://tabl.readthedocs.io/en/stable/index.html>`_.
+* The repository on `Github <https://github.com/BastiaanBergman/tabl>`_.
+* Installables on `pip <https://pypi.org/project/tabl/>`_.
 * Questions and answers on `StackOverflow <https://stackoverflow.com/>`_, I
   will try to monitor for it.
 
 Stable releases
 ================
-* tabel 1.2.3
+* tabl 1.2.3
 
   * Added __delitem__ feature to delete row(s) or a column.
 
-* tabel 1.2.2
+* tabl 1.2.2
 
   * Added argument to save and read methods for csv and gz formats to specify
     whether or not to write/read a header with the column names. For reading
     header can be left to None for automatic sniffing of the header. Default is
     True for both read and save methods.
 
-* tabel 1.2.1
+* tabl 1.2.1
 
   * Removed unicode characters from description to fix pip install
-    `issue <https://github.com/BastiaanBergman/tabel/issues/6#issue-440282452>`.
+    `issue <https://github.com/BastiaanBergman/tabl/issues/6#issue-440282452>`.
 
-* tabel 1.2.0
+* tabl 1.2.0
 
   * Fix for numpy 1.15.5 "warnings"
   * Fix for outerjoin to raise an error in case of unsupported datatypes
 
-* tabel 1.1
+* tabl 1.1
 
   * Added join and group_by methods
   * September 27, 2018
 
-* tabel 1.0
+* tabl 1.0
 
   * First release
   * September 8, 2018
@@ -308,7 +308,7 @@ I'm using pytest, pylint, doctest, sphynx and setuptools.
 
  - pytest ::
 
-    cd tabel/test
+    cd tabl/test
     conda activate py3_6
     pytest
     conda activate py2_7
@@ -316,23 +316,23 @@ I'm using pytest, pylint, doctest, sphynx and setuptools.
 
  - pylint ::
 
-    cd tabel/
+    cd tabl/
     ./pylint.sh
 
  - doctest ::
 
-    cd tabel/docs
+    cd tabl/docs
     make doctest
 
  - sphynx ::
 
-    cd tabel/docs
+    cd tabl/docs
     make html
 
  - setuptools/pypi ::
 
     python setup.py sdist bdist_wheel
-    twine upload dist/tabel-1.1.0.*
+    twine upload dist/tabl-1.1.0.*
 
  - git ::
 
@@ -353,7 +353,7 @@ What's in the name?
 ===================
 
 *Tabel* is Dutch for table (two-dimensional enlisting), `wiktionary
-<https://nl.wiktionary.org/wiki/tabel>`_. The english word table, as in "dinner
+<https://nl.wiktionary.org/wiki/tabl>`_. The english word table, as in "dinner
 table", translates in Dutch to *tafel*. The Dutch word *tafel* is an old
 fashioned word for data-table, mostly used for calculation tables which itself
 is old fashioned as well.
@@ -370,7 +370,7 @@ ToDo
 * items() and row_items() and keys() and values() method
 * pop_column method
 * tox - environment testing
-* set subsets of tabels with (subsets) of other tabels, seems logic as __setitem__ is
+* set subsets of tabls with (subsets) of other tabls, seems logic as __setitem__ is
   allowed to provide the datatype that should have come from a __getitem__
 * datetime column support
 * add disk datalogger

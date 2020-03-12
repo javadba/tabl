@@ -1,10 +1,10 @@
-echo "######## tabel.py"
-pylint tabel/tabel.py
+echo "######## tabl.py"
+pylint tabl/tabl.py
 echo "######## hashjoin.py"
-pylint tabel/hashjoin.py
+pylint tabl/hashjoin.py
 echo "######## util.py"
-pylint tabel/util.py
+pylint tabl/util.py
 echo "######## numpy_types.py"
-pylint tabel/numpy_types.py
+pylint tabl/numpy_types.py
 echo "######## __init__.py"
-pylint tabel/__init__.py
+pylint tabl/__init__.py

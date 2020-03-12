@@ -1,6 +1,6 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """
-.. module:: tabel.tabel
+.. module:: tabl.tabl
 .. moduleauthor:: Bastiaan Bergman <Bastiaan.Bergman@gmail.com>
 
 """
@@ -14,12 +14,12 @@ from .util import ImpError, isstring
 try:
     from tabulate import tabulate
 except ImpError:
-    def tabulate(tbl, columns=None, tablefmt=None):     # pylint: disable=unused-argument
+    def tabulate(tabl, columns=None, tablefmt=None):     # pylint: disable=unused-argument
         """Alt tabulate
         """
         outp = ""
         outp += " ".join(columns) + "\n"
-        for r in tbl:
+        for r in tabl:
             outp += str(r) + "\n"
         return outp
 
@@ -52,7 +52,7 @@ def transpose(datastruct):
     """Transpose rows and columns.
 
     Convenience function. Usually DB connectors return data as a list of
-    records, Tabel takes and internally stores data as a list of columns (column
+    records, Tabl takes and internally stores data as a list of columns (column
     store). This function will transpose the list of records into a list of
     columns without a priori assuming anything about the datatype of each
     individual element.
@@ -76,10 +76,10 @@ def transpose(datastruct):
 
 
 T = transpose
-"""Convenience alias for :mod:`tabel.transpose`."""
+"""Convenience alias for :mod:`tabl.transpose`."""
 
-class Tabel(HashJoinMixin):
-    """Tabel datastructure
+class Tabl(HashJoinMixin):
+    """Tabl datastructure
 
     Data table with rows and columns, rows are numbered columns are named. Each
     column has its own datatype. Data is stored by columns (column store), fixed
@@ -88,7 +88,7 @@ class Tabel(HashJoinMixin):
     Parameters:
         datastruct (object) :
             list, tuple, ndarray or dict of lists, tuples, ndarrays or elements;
-            or a `pandas.DataFrame`. List of columns of data. See :mod:`tabel.T` for
+            or a `pandas.DataFrame`. List of columns of data. See :mod:`tabl.T` for
             a convenience function to transpose a list of records.
         columns (list of strings) :
             Column names, ignored when keys are part of the datastruct (dict and
@@ -100,13 +100,13 @@ class Tabel(HashJoinMixin):
 
     Notes:
 
-        1. It is possible to create an empty Tabel instance and later add data
-           using the :mod:`tabel.Tabel.append` and/or
-           :mod:`tabel.Tabel.__setitem__` methods.
+        1. It is possible to create an empty Tabl instance and later add data
+           using the :mod:`tabl.Tabl.append` and/or
+           :mod:`tabl.Tabl.__setitem__` methods.
 
         2. It is possibe to add or manipulate data directly through the instance
-           attributes :mod:`tabel.Tabel.columns` and :mod:`tabel.Tabel.data`. One
-           could use the :mod:`tabel.Tabel.valid` method to check wether the
+           attributes :mod:`tabl.Tabl.columns` and :mod:`tabl.Tabl.data`. One
+           could use the :mod:`tabl.Tabl.valid` method to check wether the
            manipulated structure is still valid.
 
         4. If one or more (but not all) of the columns contain a single element
@@ -114,11 +114,11 @@ class Tabel(HashJoinMixin):
 
     Examples:
 
-        To initialize a Tabel, call the constructor with the data in column
+        To initialize a Tabl, call the constructor with the data in column
         lists:
 
-            >>> from tabel import Tabel
-            >>> Tabel( [ ["John", "Joe", "Jane"],
+            >>> from tabl import Tabl
+            >>> Tabl( [ ["John", "Joe", "Jane"],
             ...          [1.82, 1.65, 2.15],
             ...          [False, False, True] ],
             ...       columns = ["Name", "Height", "Married"])
@@ -131,9 +131,9 @@ class Tabel(HashJoinMixin):
 
     """
     max_repr_rows = 20
-    """int: Maximum number of rows to show when :func:`~tabel.Tabel.__repr__` is invoked."""
+    """int: Maximum number of rows to show when :func:`~tabl.Tabl.__repr__` is invoked."""
     repr_layout = 'presto'
-    """string: The layout used with `tabulate` in the :func:`~tabel.Tabel.__repr__` method."""
+    """string: The layout used with `tabulate` in the :func:`~tabl.Tabl.__repr__` method."""
 
     join_fill_value = {"float": np.nan, "integer": 999999, "string": ""}
     """dict: Fill vallues to be used when doing outer joins"""
@@ -145,13 +145,13 @@ class Tabel(HashJoinMixin):
             numpy.ndarrays of the column data. Each array containing one column
             of data. Can be maniulated directly, if desired, as long as the
             structure remains valid within this framwork. Validity can be
-            checked with the property :func:`~tabel.Tabel.valid`.
+            checked with the property :func:`~tabl.Tabl.valid`.
             """
         self.columns = list()
         """list :
             string names of columns. Can be maniulated directly, if desired, as
             long as the structure remains valid within this framwork. Validity
-            can be checked with the method :func:`~tabel.Tabel.valid`.
+            can be checked with the method :func:`~tabl.Tabl.valid`.
             """
         if datastruct is not None:
             if hasattr(datastruct, "items"):
@@ -188,25 +188,25 @@ class Tabel(HashJoinMixin):
         return np.array(value, copy=copy)
 
     def row_append(self, row):
-        """Append a row reccord at the end of the Tabel.
+        """Append a row reccord at the end of the Tabl.
 
-        Appending a single row at the end of the Tabel.
+        Appending a single row at the end of the Tabl.
 
         Arguments:
             row (dict, list, tuple) :
-                The row to be appended to the Tabel. If a dict is provided the
-                keys should match the column names of the Tabel. If a list or
+                The row to be appended to the Tabl. If a dict is provided the
+                keys should match the column names of the Tabl. If a list or
                 tuple is provided the length and order should match the columns
-                of the Tabel. columns do not need to match if the current Tabel
+                of the Tabl. columns do not need to match if the current Tabl
                 has zero length.
         Returns:
-            Nothing. Change in-place.
+            self. I like chaining/fluent api's and don't care about being pythonic
         """
         if len(self) == 0:
             self.__init__(row)
         elif hasattr(row, "items"):
             assert set(self.columns) == set(row), \
-                "Not the same columns in Tabel: {} {}".format(self.columns, row.keys())
+                "Not the same columns in Tabl: {} {}".format(self.columns, row.keys())
             for col, dta in row.items():
                 ci = self.columns.index(col)
                 self.data[ci] = np.concatenate([self.data[ci], np.array([dta])])
@@ -215,51 +215,53 @@ class Tabel(HashJoinMixin):
                 self.data[ci] = np.concatenate([self.data[ci], np.array([dta])])
         else:
             raise ValueError("Number of elements in {row} not equal ".format(row=row),
-                             "to number of columns in Tabel.")
+                             "to number of columns in Tabl.")
 
         if not self.valid:
             raise ValueError("Invalid datastructure.")
+        return self
 
-    def append(self, tbl):
-        """Append new Tabel to the current Tabel.
+    def append(self, tabl):
+        """Append new Tabl to the current Tabl.
 
-        Append a Tabel or pandas.DataFrame to the end of this Tabel. Each column
+        Append a Tabl or pandas.DataFrame to the end of this Tabl. Each column
         is appended to each column of the instance invoking the method.
 
         Arguments:
-            tbl (Tabel) :
-                Tabel with the same columns as the current Tabel, order of
+            tabl (Tabl) :
+                Tabl with the same columns as the current Tabl, order of
                 columns does not need to match. Columns do not need to match if
-                the current Tabel has zero length. Besides Tabel onjects
+                the current Tabl has zero length. Besides Tabl onjects
                 pandas.DataFrame objects are also allowed.
 
         Returns:
-            Nothing, change in-place.
+            self. I like chaining/fluent api's and don't care about being pythonic
         """
-        if len(self) == 0 and isinstance(tbl, Tabel):
-            self.__init__(tbl.data, columns=tbl.columns)
+        if len(self) == 0 and isinstance(tabl, Tabl):
+            self.__init__(tabl.data, columns=tabl.columns)
 
         elif len(self) == 0:
-            self.__init__(tbl)
+            self.__init__(tabl)
 
-        elif isinstance(tbl, Tabel):
-            assert set(self.columns) == set(tbl.columns), \
-                "Not the same columns in Tabel: {} {}".format(self.columns, tbl.columns)
-            for col, dta in zip(tbl.columns, tbl.data):
+        elif isinstance(tabl, Tabl):
+            assert set(self.columns) == set(tabl.columns), \
+                "Not the same columns in Tabl: {} {}".format(self.columns, tabl.columns)
+            for col, dta in zip(tabl.columns, tabl.data):
                 ci = self.columns.index(col)
                 self.data[ci] = np.concatenate([self.data[ci], dta])
 
-        elif isinstance(tbl, pd.DataFrame):
-            assert set(self.columns) == set(tbl), \
-                "Not the same columns in Tabel: {} {}".format(self.columns, tbl.keys())
-            for col, dta in tbl.items():
+        elif isinstance(tabl, pd.DataFrame):
+            assert set(self.columns) == set(tabl), \
+                "Not the same columns in Tabl: {} {}".format(self.columns, tabl.keys())
+            for col, dta in tabl.items():
                 ci = self.columns.index(col)
                 self.data[ci] = np.concatenate([self.data[ci], dta])
         else:
-            raise ValueError("Tabel type not recognized.")
+            raise ValueError("Tabl type not recognized.")
 
         if not self.valid:
             raise ValueError("Invalid datastructure.")
+        return self
 
     def __iadd__(self, other):
         self.append(other)
@@ -297,7 +299,7 @@ class Tabel(HashJoinMixin):
             raise ValueError("Not iterable or existing columns: {}".format(c))
 
     def __getitem__(self, key):
-        """Indexing and slicing parts of a Tabel.
+        """Indexing and slicing parts of a Tabl.
 
         Slicing and indexing mostly follows Numpy array and Python list
         conventions.
@@ -323,7 +325,7 @@ class Tabel(HashJoinMixin):
             element ():
                 If both the row place and the column place are a single integer
                 (or string for the column place), adressing a single element in
-                the Tabel, wich could be of any datatype supported by
+                the Tabl, wich could be of any datatype supported by
                 Numpy.ndarray.
             column (ndarray):
                 If the column place is a single string or integer, adressing a
@@ -332,18 +334,18 @@ class Tabel(HashJoinMixin):
             row (tuple) :
                 If the row place is a single integer, adressing a single row and
                 the coumn place is either abscent or not a single integer/string.
-            Tabel (Tabel) :
+            Tabl (Tabl) :
                 If a tuple key (r, c) is provided with anything other than an
                 integer for the row place and anything other than a single
                 integer/string type for the column place.
 
     Notes:
 
-        Returned Tabel objects from slicing are referenced to the original Tabel
+        Returned Tabl objects from slicing are referenced to the original Tabl
         object unless row indexing was with a boolean list/array or the returned
-        type was not a Tabel or np.ndarray object. Changes made to the slice
-        will be reflected in the original Tabel. Appending or joining Tabels or
-        adding/renaming columns will never be reflected in the original Tabel
+        type was not a Tabl or np.ndarray object. Changes made to the slice
+        will be reflected in the original Tabl. Appending or joining Tabls or
+        adding/renaming columns will never be reflected in the original Tabl
         object. Use the `py:copy` function to make a full copy of the object.
 
     Raises:
@@ -353,7 +355,7 @@ class Tabel(HashJoinMixin):
 
     Examples:
 
-        >>> tbl[:, 1:3]
+        >>> tabl[:, 1:3]
            Height |   Married
         ----------+-----------
              1.82 |         0
@@ -361,11 +363,11 @@ class Tabel(HashJoinMixin):
              2.15 |         1
         3 rows ['<f8', '|b1']
 
-        >>> tbl[0, 0]
+        >>> tabl[0, 0]
         'John'
-        >>> tbl["Name"]
+        >>> tabl["Name"]
         array(['John', 'Joe', 'Jane'], dtype='<U4')
-        >>> tbl[0]
+        >>> tabl[0]
         ('John', 1.82, False)
         """
         # A whole single column?
@@ -425,21 +427,21 @@ class Tabel(HashJoinMixin):
             except (ValueError, TypeError) as e:        # pylint: disable=unused-variable
                 pass
 
-        # Requesting a sub-Tabel
+        # Requesting a sub-Tabl
         try:
             c = self._column_indices(c)
             columns = [self.columns[ci] for ci in c]
             data = [self.data[ci][r] for ci in c]
-            return Tabel(data, columns, copy=False)
+            return Tabl(data, columns, copy=False)
         except (ValueError, TypeError, KeyError) as e:      # pylint: disable=unused-variable
             raise KeyError("Invalid key provided: ({}, {})".format(r, c))
 
     def __setitem__(self, key, value):
-        """Setting a slice of a Tabel
+        """Setting a slice of a Tabl
 
         Setting, like getting, slices mostly follows numpy conventions.
         Specifically the rules for the key are the same as for
-        :mod:`tabel.Tabel.__getitem__` with the same relation between key and
+        :mod:`tabl.Tabl.__getitem__` with the same relation between key and
         expected type for the value. In adition this method can also be used to
         add new columns.
 
@@ -452,7 +454,7 @@ class Tabel(HashJoinMixin):
                 c can be a single integer or string, a boolean array, an integer
                 or string itereable or a slice object.
 
-                To adress a single element in the Tabel object the key should be
+                To adress a single element in the Tabl object the key should be
                 a tuple of (r, c) with r a single integer adressing the row and
                 c a single integer or string addressing the column of the
                 element to be changed.
@@ -471,7 +473,7 @@ class Tabel(HashJoinMixin):
                 element:
                     A single element of the same type, or a type convertable to
                     the same, as the column targeted as a destination. See
-                    :mod:`tabel.Tabel.dtype` to get the type of the columns.
+                    :mod:`tabl.Tabl.dtype` to get the type of the columns.
 
                 column :
                     An array or list of elements, each element of of the same
@@ -486,12 +488,11 @@ class Tabel(HashJoinMixin):
                     destination. Length of the tuple should match the number of
                     columns addressed.
 
-                Tabel :
+                Tabl :
                     Not currently implemented.
 
         Returns:
-
-            nothing, change in-place.
+            self. I like chaining/fluent api's and don't care about being pythonic
 
         Notes:
 
@@ -501,18 +502,18 @@ class Tabel(HashJoinMixin):
             provided. If just the colum name is provided, with no indication for row,
             than the whole column is replaced with the column provided.
 
-                >>> tbl = Tabel( [ ["John", "Joe", "Jane"], [1.82, 1.65, 2.15],
+                >>> tabl = Tabl( [ ["John", "Joe", "Jane"], [1.82, 1.65, 2.15],
                 ...              [False, False, True] ], columns = ["Name", "Height", "Married"])
-                >>> tbl[:, "Name"] = [1, 2, 3]
-                >>> tbl
+                >>> tabl[:, "Name"] = [1, 2, 3]
+                >>> tabl
                    Name |   Height |   Married
                 --------+----------+-----------
                       1 |     1.82 |         0
                       2 |     1.65 |         0
                       3 |     2.15 |         1
                 3 rows ['<U4', '<f8', '|b1']
-                >>> tbl["Name"] = [1, 2, 3]
-                >>> tbl
+                >>> tabl["Name"] = [1, 2, 3]
+                >>> tabl
                    Name |   Height |   Married
                 --------+----------+-----------
                       1 |     1.82 |         0
@@ -527,7 +528,7 @@ class Tabel(HashJoinMixin):
         try:
             c = self.columns.index(key)
             self.data[c] = self._columnize(value)
-            return
+            return self
         except (ValueError) as e:                   # pylint: disable=unused-variable
             pass
 
@@ -535,13 +536,13 @@ class Tabel(HashJoinMixin):
         if isstring(key):
             self.columns.append(key)
             self.data.append(self._columnize(value))
-            return
+            return self
 
         # A pair provided?
         try:
             (r, c) = key
             self._setitem(r, c, value)
-            return
+            return self
         except (ValueError, TypeError) as e:        # pylint: disable=unused-variable
             pass
 
@@ -552,7 +553,7 @@ class Tabel(HashJoinMixin):
                 "Value iterable does not match number of columns."
             for i, v in enumerate(value):
                 self.data[i][r] = v
-            return
+            return self
         except (ValueError, TypeError) as e:        # pylint: disable=unused-variable
             raise KeyError("Invalid key: {}".format(key))
 
@@ -564,15 +565,15 @@ class Tabel(HashJoinMixin):
                 The row number or numbers to be getting
             c (int, string, iterable, slice)
                 The column to be getting
-        Returns :
-            Nothing
+        Returns:
+            self. I like chaining/fluent api's and don't care about being pythonic
         """
         # Single element?
         try:
             r = int(r)
             c = self._column_index(c)
             self.data[c][r] = value
-            return
+            return self
         except (ValueError, TypeError) as e:        # pylint: disable=unused-variable
             pass
 
@@ -580,7 +581,7 @@ class Tabel(HashJoinMixin):
         try:
             c = self._column_index(c)
             self.data[c][r] = value
-            return
+            return self
         except (ValueError, TypeError) as e:        # pylint: disable=unused-variable
             pass
 
@@ -592,14 +593,14 @@ class Tabel(HashJoinMixin):
                 "Data does not match the addressed row: {}, {}".format(c, value)
             for ci, v in zip(c, value):
                 self.data[ci][r] = v
-            return
+            return self
         except (ValueError, TypeError) as e:        # pylint: disable=unused-variable
             pass
 
-        # A Tabel?
+        # A Tabl?
         try:
             self[r, c]                            # pylint: disable=pointless-statement
-            NotImplementedError(("Setting Tabel slices with Tabel ",
+            NotImplementedError(("Setting Tabl slices with Tabl ",
                                  "slice is not yet implemented."))
         except (ValueError, TypeError, KeyError) as e:      # pylint: disable=unused-variable
             pass
@@ -607,7 +608,7 @@ class Tabel(HashJoinMixin):
         raise KeyError("Invalid key provided: ({}, {})".format(r, c))
 
     def __delitem__(self, key):
-        """Deleting rows or columns from a Tabel.
+        """Deleting rows or columns from a Tabl.
 
         Deleting rows or columns can be done using the del keyword.
 
@@ -615,14 +616,13 @@ class Tabel(HashJoinMixin):
             key (int, list of ints, slice or string):
 
                 If the key is a single integer, a list of integers or a slice
-                object, then the specified rows will be removed from the Tabel.
+                object, then the specified rows will be removed from the Tabl.
 
                 If the key is a single string, then the specified column will be
-                removed from the Tabel.
+                removed from the Tabl.
 
         Returns:
-
-            nothing, change in-place.
+            self. I like chaining/fluent api's and don't care about being pythonic
 
         Raises:
 
@@ -638,27 +638,27 @@ class Tabel(HashJoinMixin):
 
         Notes:
 
-            Because Tabel stores data by columns, this operation requires
-            creating new numpy arrays for all columns in the Tabel.
+            Because Tabl stores data by columns, this operation requires
+            creating new numpy arrays for all columns in the Tabl.
 
             Examples:
-        >>> tbl = Tabel( [ ["John", "Joe", "Jane"], [1.82, 1.65, 2.15],
+        >>> tabl = Tabl( [ ["John", "Joe", "Jane"], [1.82, 1.65, 2.15],
         ...              [False, False, True] ], columns = ["Name", "Height", "Married"])
-        >>> del tbl["Name"]
-        >>> del tbl[0]
-        >>> tbl
+        >>> del tabl["Name"]
+        >>> del tabl[0]
+        >>> tabl
            Height |   Married
         ----------+-----------
              1.65 |         0
              2.15 |         1
         2 rows ['<f8', '|b1']
-        >>> del tbl[0:2]
-        >>> tbl
+        >>> del tabl[0:2]
+        >>> tabl
          Height   | Married
         ----------+-----------
         0 rows ['<f8', '|b1']
-        >>> del tbl['Married']
-        >>> tbl
+        >>> del tabl['Married']
+        >>> tabl
          Height
         ----------
         0 rows ['<f8']
@@ -672,6 +672,7 @@ class Tabel(HashJoinMixin):
         else: # otherwise try to delete rows using numpy.delete()
             for i in range(len(self.data)):
                 self.data[i] = np.delete(self.data[i], key)
+        return self
 
     def __len__(self):
         if self.data:
@@ -680,7 +681,7 @@ class Tabel(HashJoinMixin):
 
     @property
     def shape(self):
-        """Tabel shape.
+        """Tabl shape.
 
         Returns:
 
@@ -694,9 +695,9 @@ class Tabel(HashJoinMixin):
         """Pretty print using tabulate.
 
         Examples:
-            >>> tbl = Tabel( [ ["John", "Joe", "Jane"], [1.82, 1.65, 2.15],
+            >>> tabl = Tabl( [ ["John", "Joe", "Jane"], [1.82, 1.65, 2.15],
             ...          [False, False, True] ], columns = ["Name", "Height", "Married"])
-            >>> tbl
+            >>> tabl
              Name   |   Height |   Married
             --------+----------+-----------
              John   |     1.82 |         0
@@ -719,27 +720,27 @@ class Tabel(HashJoinMixin):
         return np.dtype([(c, dt.dtype) for c, dt in zip(self.columns, self.data)])
 
     def astype(self, dtypes):
-        """Returns a type-converted tabel.
+        """Returns a type-converted tabl.
 
-        Converts the tabel according to the provided list of dtypes and returns
-        a new Tabel instance.
+        Converts the tabl according to the provided list of dtypes and returns
+        a new Tabl instance.
 
         Arguments:
 
             dtypes (list) :
                 list of valid numpy dtypes in the order of the columns. List
                 should have same length as number of columns present (see
-                `Tabel.shape`) See Tabel.dtype for the current types of the
-                Tabel.
+                `Tabl.shape`) See Tabl.dtype for the current types of the
+                Tabl.
 
         Returns:
 
-            Tabel object with the columns converted to the new dtype.
+            Tabl object with the columns converted to the new dtype.
 
         Examples:
 
         """
-        return Tabel({k: v.astype(dty) for k, v, dty in zip(self.columns, self.data, dtypes)})
+        return Tabl({k: v.astype(dty) for k, v, dty in zip(self.columns, self.data, dtypes)})
 
     @property
     def dict(self):
@@ -755,7 +756,7 @@ class Tabel(HashJoinMixin):
         """Check wether the current datastructure is legit.
 
         Returns:
-            (bool) True if the Tabel internal structure is valid.
+            (bool) True if the Tabl internal structure is valid.
 
         Notes:
             This is currently checking for the length of the columns to be the
@@ -767,22 +768,22 @@ class Tabel(HashJoinMixin):
         return wid_chk and len_chk
 
     def sort(self, columns):
-        """Sort the Tabel.
+        """Sort the Tabl.
 
-        Sorting in-place the Tabel according to columns provided. Rows always stay together,
+        Sorting in-place the Tabl according to columns provided. Rows always stay together,
         just the order of rows is affectd.
 
         Arguments:
             columns (string or list) :
                 column name or column names to be sorted, listed in-order.
 
-        returns:
-            Nothing. Sorting in-place.
+        Returns:
+            self. I like chaining/fluent api's and don't care about being pythonic
 
         Examples:
-            >>> tbl = Tabel({'a':['b', 'g', 'd'], 'b':list(range(3))})
-            >>> tbl.sort('a')
-            >>> tbl
+            >>> tabl = Tabl({'a':['b', 'g', 'd'], 'b':list(range(3))})
+            >>> tabl.sort('a')
+            >>> tabl
              a   |   b
             -----+-----
              b   |   0
@@ -794,11 +795,12 @@ class Tabel(HashJoinMixin):
         ind = np.lexsort([self.data[self.columns.index(c)] for c in columns])
         for i in range(len(self.columns)):
             self.data[i] = self.data[i][ind]
+        return self
 
     def save(self, filename, fmt='auto', header=True):
         """Save to file
 
-        Saves the Tabel data including a header with the column names to a file
+        Saves the Tabl data including a header with the column names to a file
         of the specified name in the current directory or the directory
         specified.
 
@@ -824,7 +826,7 @@ class Tabel(HashJoinMixin):
                 csv and gz
 
         Returns:
-            Nothing.
+            self. I like chaining/fluent api's and don't care about being pythonic
         """
         if fmt == 'auto':
             fmt = os.path.splitext(filename)[1].replace('.', '')
@@ -842,6 +844,8 @@ class Tabel(HashJoinMixin):
 
         else:
             raise ValueError("Only formats supported: csv, npz, gz")
+        return self
+
 
     def _write_csv(self, f, header=True):
         """Writing csv filesself.
@@ -856,12 +860,13 @@ class Tabel(HashJoinMixin):
         if header:
             writer.writerow(self.columns)
         writer.writerows(zip(*self.data))
+        return self
 
 
-def read_tabel(filename, fmt='auto', header=True):
+def read_tabl(filename, fmt='auto', header=True):
     """Read data from disk
 
-    Read data from disk and return a Tabel object.
+    Read data from disk and return a Tabl object.
 
     Arguments:
         filename (str) :
@@ -873,7 +878,7 @@ def read_tabel(filename, fmt='auto', header=True):
             (None), only used for csv and gz
 
     Returns:
-        Tabel object containing the data.
+        Tabl object containing the data.
     """
     if fmt == 'auto':
         fmt = os.path.splitext(filename)[1].replace('.', '')
@@ -890,7 +895,7 @@ def read_tabel(filename, fmt='auto', header=True):
         data = dict(datastruct=datastruct, columns=columns)
     else:
         raise ValueError("Only formats supported: csv, npz, gz")
-    return Tabel(**data)
+    return Tabl(**data)
 
 
 def _read_csv(f, header=True):

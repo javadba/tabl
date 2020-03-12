@@ -5,5 +5,10 @@ build/
 .cache/
 .pytest_cache/
 dist/
-example/
-local_todo.rst
+target/*
+*.class
+*.log
+*.DS_Store
+*.pyc
+*.sw*
+*~
