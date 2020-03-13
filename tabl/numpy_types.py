@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-.. module:: tabel.numpy_types
+.. module:: tabl.numpy_types
 .. moduleauthor:: Bastiaan Bergman <Bastiaan.Bergman@gmail.com>
 
 """

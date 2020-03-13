@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-.. module:: tabel.util
+.. module:: tabl.util
 .. moduleauthor:: Bastiaan Bergman <Bastiaan.Bergman@gmail.com>
 
 """

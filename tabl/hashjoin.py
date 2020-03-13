@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-.. module:: tabel.hashjoin
+.. module:: tabl.hashjoin
 .. moduleauthor:: Bastiaan Bergman <Bastiaan.Bergman@gmail.com>
 
 """
@@ -28,7 +28,7 @@ def arg_left_join(tbl_l, index1, tbl_r, index2):
     return idx
 
 def add_empty_row(tbl):
-    """Add an empty row using the fill values to the end of an Tabel
+    """Add an empty row using the fill values to the end of an Tabl
     """
     empty_row = []
     for c in tbl.dtype.names:
@@ -42,17 +42,17 @@ def add_empty_row(tbl):
         tbl.row_append(empty_row)
     except ValueError:
         raise ValueError("Outer join cannot be fullfilled when there are other ",
-                         "columns than float, string or integer because Tabel ",
+                         "columns than float, string or integer because Tabl ",
                          "doesn't know what to fill it up with.")
 
 def remove_empty_row(tbl):
-    """Remove the last (emtpy) row of a Tabel, used for outer joins
+    """Remove the last (emtpy) row of a Tabl, used for outer joins
     """
     tbl.data = [dt[0:-1] for dt in tbl.data]
 
 
 class HashJoinMixin(object):
-    """Mixin to add to the Tabel class, providing join and group_by methods
+    """Mixin to add to the Tabl class, providing join and group_by methods
     """
 
     def _union(self, idx, key, tbl_r, key_r, jointype="inner", suffixes=("_l", "_r")):
@@ -105,46 +105,46 @@ class HashJoinMixin(object):
         """dbase join tables with ind column(s) as the keys.
 
         Performs a database style joins on the two tables, the current instance
-        and the provided tabel 'tbl_r' on the columns listed in 'key'.
+        and the provided tabl 'tbl_r' on the columns listed in 'key'.
 
         arguments:
-            tbl_r (Tabel) :
-                The right tabel to be joined.
+            tbl_r (Tabl) :
+                The right tabl to be joined.
             key (string or list) :
                 Name of the column(s) to be used as the key(s).
             key_r (list) :
-                A list of columnnames of the right tabel matching the left
-                tabel. Defaults to the list provided in `ind`.
+                A list of columnnames of the right tabl matching the left
+                tabl. Defaults to the list provided in `ind`.
             jointype (str) :
                 One of: `inner`, `left`, `right`, `outer`. If `inner`, returns
-                the elements common to both tabels. If `outer`, returns the
-                common elements as well as the elements of the left tabel not in
-                the right tabel and the elements of the right tabel not in the
-                left tabel. If `left`, returns the common elements and the
-                elements of the left tabel not in the right tabel. If `right`,
-                returns the common elements and the elements of the right tabel
-                not in the left tabel.
+                the elements common to both tabls. If `outer`, returns the
+                common elements as well as the elements of the left tabl not in
+                the right tabl and the elements of the right tabl not in the
+                left tabl. If `left`, returns the common elements and the
+                elements of the left tabl not in the right tabl. If `right`,
+                returns the common elements and the elements of the right tabl
+                not in the left tabl.
             suffixes (tuple) :
-                Strings to be added to the left and right tabel column names.
+                Strings to be added to the left and right tabl column names.
 
         returns:
-            The joined tabel
+            The joined tabl
 
         notes:
-            The order and suffixes of the returned Tabel depend on the jointype.
+            The order and suffixes of the returned Tabl depend on the jointype.
             For all types, all but the key columns are suffixed with the left
-            and the right suffix respectively. The left Tabel columns come first
-            followed by the right Tabel columns, with the key column placed
-            first of its Tabel columns. For `inner` and `left` jointypes the
+            and the right suffix respectively. The left Tabl columns come first
+            followed by the right Tabl columns, with the key column placed
+            first of its Tabl columns. For `inner` and `left` jointypes the
             right key column is left out. for `right` jointype the left key
             column is left out. For the `outer` jointype both keys are present
             and suffixed.
 
         Examples:
-            Join a Tabel into the current Tabel matching on column 'a':
+            Join a Tabl into the current Tabl matching on column 'a':
 
-            >>> tbl = Tabel({"a":list(range(4)), "b": ['a', 'b'] *2})
-            >>> tbl_b = Tabel({"a":list(range(4)), "c": ['d', 'e'] *2})
+            >>> tbl = Tabl({"a":list(range(4)), "b": ['a', 'b'] *2})
+            >>> tbl_b = Tabl({"a":list(range(4)), "c": ['d', 'e'] *2})
             >>> tbl.join(tbl_b, "a")
                a | b_l   | c_r
             -----+-------+-------
@@ -187,7 +187,7 @@ class HashJoinMixin(object):
         raise NotImplementedError("No such jointype: {}".format(jointype))
 
     def group_by(self, key, aggregate_fie_col=None):
-        """Groups and aggregates Tabel.
+        """Groups and aggregates Tabl.
 
         Arguments:
             key (str or list) :
@@ -201,14 +201,14 @@ class HashJoinMixin(object):
                 columns of `key` are returned if ommited.
 
         Returns:
-            Tabel object with requested columns
+            Tabl object with requested columns
 
         Examples:
             grouping by 'a' and then by 'b', agregating with taking the sum of
             'a' elements and taking the first 'c' element of each group:
 
-            >>> tbl = Tabel({'a':[10, 20, 30, 40]*3, 'b':["100", "200"]*6, 'c':[100, 200]*6})
-            >>> from tabel import first
+            >>> tbl = Tabl({'a':[10, 20, 30, 40]*3, 'b':["100", "200"]*6, 'c':[100, 200]*6})
+            >>> from tabl import first
             >>> tbl.group_by(['b', 'a'], [ (np.sum, 'a'), (first, 'c')])
                b |   a |   a_sum |   c_first
             -----+-----+---------+-----------
@@ -235,7 +235,7 @@ class HashJoinMixin(object):
 
 def first(array):
     """
-    Get the first element when doing a :mod:`tabel.Tabel.group_by`.
+    Get the first element when doing a :mod:`tabl.Tabl.group_by`.
 
     Arguments :
         array (numpy ndarray) :
@@ -245,7 +245,7 @@ def first(array):
         The first element of ar
 
     Examples :
-        See Tabel.group_by for examples
+        See Tabl.group_by for examples
 
     """
     return array[0] if len(array) > 0 else None

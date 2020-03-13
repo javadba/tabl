@@ -1,66 +1,66 @@
-class Tabel
+class Tabl
 ============
 
-.. currentmodule: tabel
+.. currentmodule: tabl
 
-.. autoclass:: tabel.Tabel
+.. autoclass:: tabl.Tabl
 
 getter
 ------
 
-.. automethod:: tabel.Tabel.__getitem__
+.. automethod:: tabl.Tabl.__getitem__
 
 setter
 ------
 
-.. automethod:: tabel.Tabel.__setitem__
+.. automethod:: tabl.Tabl.__setitem__
 
 
 delitem
 -------
 
-.. automethod:: tabel.Tabel.__delitem__
+.. automethod:: tabl.Tabl.__delitem__
 
 
 repr
 ----
 
-.. automethod:: tabel.Tabel.__repr__
+.. automethod:: tabl.Tabl.__repr__
 
 append
 ------
 
-.. automethod:: tabel.Tabel.append
+.. automethod:: tabl.Tabl.append
 
 row_append
 ----------
 
-.. automethod:: tabel.Tabel.row_append
+.. automethod:: tabl.Tabl.row_append
 
 join
 -----
 
-.. automethod:: tabel.Tabel.join
+.. automethod:: tabl.Tabl.join
 
 group_by
 --------
 
-.. automethod:: tabel.Tabel.group_by
+.. automethod:: tabl.Tabl.group_by
 
 sort
 ----
 
-.. automethod:: tabel.Tabel.sort
+.. automethod:: tabl.Tabl.sort
 
 astype
 ------
 
-.. automethod:: tabel.Tabel.astype
+.. automethod:: tabl.Tabl.astype
 
 save
 ----
 
-.. automethod:: tabel.Tabel.save
+.. automethod:: tabl.Tabl.save
 
 
 
@@ -71,34 +71,34 @@ properties
 dict
 ~~~~
 
-.. autoattribute:: tabel.Tabel.dict
+.. autoattribute:: tabl.Tabl.dict
 
 shape
 ~~~~~
 
-.. autoattribute:: tabel.Tabel.shape
+.. autoattribute:: tabl.Tabl.shape
 
 len
 ~~~
 
-.. autoattribute:: tabel.Tabel.__len__
+.. autoattribute:: tabl.Tabl.__len__
 
 dtype
 ~~~~~~
 
-.. autoattribute:: tabel.Tabel.dtype
+.. autoattribute:: tabl.Tabl.dtype
 
 valid
 ~~~~~~
 
-.. autoattribute:: tabel.Tabel.valid
+.. autoattribute:: tabl.Tabl.valid
 
 
 class attributes
 -----------------
 
-        .. autoattribute:: tabel.Tabel.repr_layout
+        .. autoattribute:: tabl.Tabl.repr_layout
 
-        .. autoattribute:: tabel.Tabel.max_repr_rows
+        .. autoattribute:: tabl.Tabl.max_repr_rows
 
-        .. autoattribute:: tabel.Tabel.join_fill_value
+        .. autoattribute:: tabl.Tabl.join_fill_value

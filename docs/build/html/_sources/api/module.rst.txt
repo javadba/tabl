@@ -1,7 +1,7 @@
-tabel module
+tabl module
 ============
 
-.. module:: tabel
+.. module:: tabl
 
 transpose
 ---------
@@ -10,10 +10,10 @@ transpose
 
 .. autofunction:: T
 
-read_tabel
+read_tabl
 -----------
 
-.. autofunction:: read_tabel
+.. autofunction:: read_tabl
 
 first
 ------

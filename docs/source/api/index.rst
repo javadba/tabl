@@ -6,4 +6,4 @@ API Reference
 
 
    module
-   tabel
+   tabl

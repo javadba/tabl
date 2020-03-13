@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>About Tabel &mdash; tabel v1.0 documentation</title>
+  <title>About Tabl &mdash; tabl v1.0 documentation</title>
   
 
   
@@ -29,7 +29,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Performance" href="performance.html" />
-    <link rel="prev" title="Tabel’s documentation" href="index.html" /> 
+    <link rel="prev" title="Tabl’s documentation" href="index.html" />
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -48,7 +48,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> tabel
+            <a href="index.html" class="icon icon-home"> tabl
           
 
           
@@ -84,7 +84,7 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">About Tabel</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">About Tabl</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#design-objectives">Design objectives</a></li>
 </ul>
 </li>
@@ -93,7 +93,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#init">init</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#slice">slice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#set">set</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#append-tabel-and-row">append Tabel and row</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#append-tabl-and-row">append Tabl and row</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#instance-properties">instance properties</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#pandas">pandas</a></li>
 </ul>
@@ -104,7 +104,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#tested-on">Tested on:</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#contributing-to-tabel">Contributing to Tabel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#contributing-to-tabl">Contributing to Tabl</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#contributors">Contributors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#what-s-in-the-name">What’s in the name?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#todo">ToDo</a></li>
@@ -126,7 +126,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">tabel</a>
+          <a href="index.html">tabl</a>
         
       </nav>
 
@@ -157,7 +157,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>About Tabel</li>
+      <li>About Tabl</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -176,18 +176,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <a class="reference external image-reference" href="https://tabel.readthedocs.io/en/latest/?badge=latest"><img alt="Documentation Status" src="https://readthedocs.org/projects/tabel/badge/?version=latest" /></a>
-<div class="section" id="about-tabel">
-<h1>About Tabel<a class="headerlink" href="#about-tabel" title="Permalink to this headline">¶</a></h1>
+  <a class="reference external image-reference" href="https://tabl.readthedocs.io/en/latest/?badge=latest"><img alt="Documentation Status" src="https://readthedocs.org/projects/tabl/badge/?version=latest" /></a>
+<div class="section" id="about-tabl">
+<h1>About Tabl<a class="headerlink" href="#about-tabl" title="Permalink to this headline">¶</a></h1>
 <p>Lightweight, intuitive and fast data-tables.</p>
-<p><em>Tabel</em> data-tables are tables with columns and column names, rows and row
+<p><em>Tabl</em> data-tables are tables with columns and column names, rows and row
 numbers. Indexing and slicing your data is analogous to numpy array’s. The
 only real difference is that each column can have its own data type.</p>
 <div class="section" id="design-objectives">
 <h2>Design objectives<a class="headerlink" href="#design-objectives" title="Permalink to this headline">¶</a></h2>
 <p>I got frustrated with pandas: it’s complicated slicing syntax (.loc, .x,
 .iloc, .. etc), it’s enforced index column and the Series objects I get when I
-want a numpy array. With Tabel I created the simplified pandas I need for many
+want a numpy array. With Tabl I created the simplified pandas I need for many
 of my data-jobs. Just focussing on simple slicing of multi-datatype tables and
 basic table tools.</p>
 <ul class="simple">
@@ -203,15 +203,15 @@ is up to the user.</li>
 </div>
 <div class="section" id="install">
 <h1>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h1>
-<p>pip install tabel</p>
+<p>pip install tabl</p>
 </div>
 <div class="section" id="quickstart">
 <h1>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="init">
 <h2>init<a class="headerlink" href="#init" title="Permalink to this headline">¶</a></h2>
-<p>To setup a Tabel:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">tabel</span> <span class="k">import</span> <span class="n">Tabel</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabel</span><span class="p">([</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">],</span>
+<p>To setup a Tabl:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">tabl</span> <span class="k">import</span> <span class="n">Tabl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabl</span><span class="p">([</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">],</span>
 <span class="gp">... </span>               <span class="p">[</span><span class="mf">1.82</span><span class="p">,</span><span class="mf">1.65</span><span class="p">,</span><span class="mf">2.15</span><span class="p">],</span>
 <span class="gp">... </span>               <span class="p">[</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">]],</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="s2">&quot;Height&quot;</span><span class="p">,</span> <span class="s2">&quot;Married&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span>
@@ -223,14 +223,14 @@ is up to the user.</li>
 <span class="go">3 rows [&#39;&lt;U4&#39;, &#39;&lt;f8&#39;, &#39;|b1&#39;]</span>
 </pre></div>
 </div>
-<p>Alternatively, Tabels can be setup from dictionaries, numpy arrays, pandas
+<p>Alternatively, Tabls can be setup from dictionaries, numpy arrays, pandas
 DataFrames, or no data at all. Database connectors usually return data as a list
 of records, the module provides a convenience function to transpose this into a
 list of columns.</p>
 </div>
 <div class="section" id="slice">
 <h2>slice<a class="headerlink" href="#slice" title="Permalink to this headline">¶</a></h2>
-<p>Slicing can be done the numpy way, always returning Tabel objects:</p>
+<p>Slicing can be done the numpy way, always returning Tabl objects:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">,[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]]</span>
 <span class="go"> Name   |   Married</span>
 <span class="go">--------+-----------</span>
@@ -239,7 +239,7 @@ list of columns.</p>
 <span class="go">2 rows [&#39;&lt;U4&#39;, &#39;|b1&#39;]</span>
 </pre></div>
 </div>
-<p>Slices will always return a Tabel except in three distinct cases, when:</p>
+<p>Slices will always return a Tabl except in three distinct cases, when:</p>
 <ol class="arabic simple">
 <li>explicitly one column is requested, a numpy array is returned:</li>
 </ol>
@@ -269,7 +269,7 @@ well as numbers.</p>
 <div class="section" id="set">
 <h2>set<a class="headerlink" href="#set" title="Permalink to this headline">¶</a></h2>
 <p>Setting elements works the same as slicing:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabel</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">],</span> <span class="s1">&#39;Height&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">1.82</span><span class="p">,</span><span class="mf">1.65</span><span class="p">,</span><span class="mf">2.15</span><span class="p">],</span> <span class="s1">&#39;Married&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">]})</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabl</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">],</span> <span class="s1">&#39;Height&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">1.82</span><span class="p">,</span><span class="mf">1.65</span><span class="p">,</span><span class="mf">2.15</span><span class="p">],</span> <span class="s1">&#39;Married&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">]})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;Name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Jos&quot;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span>
 <span class="go"> Name   |   Height |   Married</span>
@@ -283,7 +283,7 @@ well as numbers.</p>
 <p>The datatype that the value is expected to have, is the same as the datatype a
 slice would result into.</p>
 <p>Adding columns, works the same as setting elements, just give it a new name:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabel</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">],</span> <span class="s1">&#39;Height&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">1.82</span><span class="p">,</span><span class="mf">1.65</span><span class="p">,</span><span class="mf">2.15</span><span class="p">],</span> <span class="s1">&#39;Married&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">]})</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabl</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">],</span> <span class="s1">&#39;Height&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">1.82</span><span class="p">,</span><span class="mf">1.65</span><span class="p">,</span><span class="mf">2.15</span><span class="p">],</span> <span class="s1">&#39;Married&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">]})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span><span class="p">[</span><span class="s1">&#39;new&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span>
 <span class="go"> Name   |   Height |   Married |   new</span>
@@ -295,7 +295,7 @@ slice would result into.</p>
 </pre></div>
 </div>
 <p>Or set the whole column to the same value:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabel</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">],</span> <span class="s1">&#39;Height&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">1.82</span><span class="p">,</span><span class="mf">1.65</span><span class="p">,</span><span class="mf">2.15</span><span class="p">],</span> <span class="s1">&#39;Married&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">]})</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabl</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">],</span> <span class="s1">&#39;Height&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">1.82</span><span class="p">,</span><span class="mf">1.65</span><span class="p">,</span><span class="mf">2.15</span><span class="p">],</span> <span class="s1">&#39;Married&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">]})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span><span class="p">[</span><span class="s1">&#39;new&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">13</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span>
 <span class="go"> Name   |   Height |   Married |   new</span>
@@ -309,10 +309,10 @@ slice would result into.</p>
 <p>Just like numpy, slices are not actual copies of the data, rather they are
 references.</p>
 </div>
-<div class="section" id="append-tabel-and-row">
-<h2>append Tabel and row<a class="headerlink" href="#append-tabel-and-row" title="Permalink to this headline">¶</a></h2>
-<p>Tabels can be appended with other Tabels:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabel</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">],</span> <span class="s1">&#39;Height&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">1.82</span><span class="p">,</span><span class="mf">1.65</span><span class="p">,</span><span class="mf">2.15</span><span class="p">],</span> <span class="s1">&#39;Married&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">]})</span>
+<div class="section" id="append-tabl-and-row">
+<h2>append Tabl and row<a class="headerlink" href="#append-tabl-and-row" title="Permalink to this headline">¶</a></h2>
+<p>Tabls can be appended with other Tabls:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabl</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">],</span> <span class="s1">&#39;Height&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">1.82</span><span class="p">,</span><span class="mf">1.65</span><span class="p">,</span><span class="mf">2.15</span><span class="p">],</span> <span class="s1">&#39;Married&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">]})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">+=</span> <span class="n">tbl</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span>
 <span class="go"> Name   |   Height |   Married</span>
@@ -327,7 +327,7 @@ references.</p>
 </pre></div>
 </div>
 <p>Or append rows as dictionary:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabel</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">],</span> <span class="s1">&#39;Height&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">1.82</span><span class="p">,</span><span class="mf">1.65</span><span class="p">,</span><span class="mf">2.15</span><span class="p">],</span> <span class="s1">&#39;Married&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">]})</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabl</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">],</span> <span class="s1">&#39;Height&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">1.82</span><span class="p">,</span><span class="mf">1.65</span><span class="p">,</span><span class="mf">2.15</span><span class="p">],</span> <span class="s1">&#39;Married&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">]})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span><span class="o">.</span><span class="n">row_append</span><span class="p">({</span><span class="s1">&#39;Height&#39;</span><span class="p">:</span><span class="mf">1.81</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">:</span><span class="s2">&quot;Jack&quot;</span><span class="p">,</span> <span class="s1">&#39;Married&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span>
 <span class="go"> Name   |   Height |   Married</span>
@@ -344,7 +344,7 @@ references.</p>
 <h2>instance properties<a class="headerlink" href="#instance-properties" title="Permalink to this headline">¶</a></h2>
 <p>Your data is simply stored as a list of numpy arrays and can be accessed or
 manipulated like that (just don’t make a mess):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabel</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">],</span> <span class="s1">&#39;Height&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">1.82</span><span class="p">,</span><span class="mf">1.65</span><span class="p">,</span><span class="mf">2.15</span><span class="p">],</span> <span class="s1">&#39;Married&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">]})</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabl</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">],</span> <span class="s1">&#39;Height&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">1.82</span><span class="p">,</span><span class="mf">1.65</span><span class="p">,</span><span class="mf">2.15</span><span class="p">],</span> <span class="s1">&#39;Married&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">]})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span><span class="o">.</span><span class="n">columns</span>
 <span class="go">[&#39;Name&#39;, &#39;Height&#39;, &#39;Married&#39;]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span><span class="o">.</span><span class="n">data</span>        
@@ -373,8 +373,8 @@ is easy:</p>
 <span class="go">2  2  12</span>
 </pre></div>
 </div>
-<p>To make a Tabel from a DataFrame, just supply it to the initialize:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabel</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<p>To make a Tabl from a DataFrame, just supply it to the initialize:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabl</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span>
 <span class="go">   a |   b</span>
 <span class="go">-----+-----</span>
@@ -384,7 +384,7 @@ is easy:</p>
 <span class="go">3 rows [&#39;&lt;i8&#39;, &#39;&lt;i8&#39;]</span>
 </pre></div>
 </div>
-<p>The dict property of Tabel provides a way to make a DataFrame from a Tabel:</p>
+<p>The dict property of Tabl provides a way to make a DataFrame from a Tabl:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">tbl</span><span class="o">.</span><span class="n">dict</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
 <span class="go">   a   b</span>
@@ -398,9 +398,9 @@ is easy:</p>
 <div class="section" id="resources-getting-help">
 <h1>Resources &amp; getting help<a class="headerlink" href="#resources-getting-help" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li>See for the full API and more examples the documentation on <a class="reference external" href="https://tabel.readthedocs.io/en/stable/index.html">RTD</a>.</li>
-<li>The repository on <a class="reference external" href="https://github.com/BastiaanBergman/tabel">Github</a>.</li>
-<li>Installables on <a class="reference external" href="https://pypi.org/project/tabel/">pip</a>.</li>
+<li>See for the full API and more examples the documentation on <a class="reference external" href="https://tabl.readthedocs.io/en/stable/index.html">RTD</a>.</li>
+<li>The repository on <a class="reference external" href="https://github.com/BastiaanBergman/tabl">Github</a>.</li>
+<li>Installables on <a class="reference external" href="https://pypi.org/project/tabl/">pip</a>.</li>
 <li>Questions and answers on <a class="reference external" href="https://stackoverflow.com/">StackOverflow</a>, I
 will try to monitor for it.</li>
 </ul>
@@ -408,33 +408,33 @@ will try to monitor for it.</li>
 <div class="section" id="stable-releases">
 <h1>Stable releases<a class="headerlink" href="#stable-releases" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li>tabel 1.2.3<ul>
+<li>tabl 1.2.3<ul>
 <li>Added __delitem__ feature to delete row(s) or a column.</li>
 </ul>
 </li>
-<li>tabel 1.2.2<ul>
+<li>tabl 1.2.2<ul>
 <li>Added argument to save and read methods for csv and gz formats to specify
 whether or not to write/read a header with the column names. For reading
 header can be left to None for automatic sniffing of the header. Default is
 True for both read and save methods.</li>
 </ul>
 </li>
-<li>tabel 1.2.1<ul>
+<li>tabl 1.2.1<ul>
 <li>Removed unicode characters from description to fix pip install
-<cite>issue &lt;https://github.com/BastiaanBergman/tabel/issues/6#issue-440282452&gt;</cite>.</li>
+<cite>issue &lt;https://github.com/BastiaanBergman/tabl/issues/6#issue-440282452&gt;</cite>.</li>
 </ul>
 </li>
-<li>tabel 1.2.0<ul>
+<li>tabl 1.2.0<ul>
 <li>Fix for numpy 1.15.5 “warnings”</li>
 <li>Fix for outerjoin to raise an error in case of unsupported datatypes</li>
 </ul>
 </li>
-<li>tabel 1.1<ul>
+<li>tabl 1.1<ul>
 <li>Added join and group_by methods</li>
 <li>September 27, 2018</li>
 </ul>
 </li>
-<li>tabel 1.0<ul>
+<li>tabl 1.0<ul>
 <li>First release</li>
 <li>September 8, 2018</li>
 </ul>
@@ -457,15 +457,15 @@ True for both read and save methods.</li>
 </ul>
 </div>
 </div>
-<div class="section" id="contributing-to-tabel">
-<h1>Contributing to Tabel<a class="headerlink" href="#contributing-to-tabel" title="Permalink to this headline">¶</a></h1>
-<p>Tabel is perfect already, no more contributions needed. Just kidding!</p>
+<div class="section" id="contributing-to-tabl">
+<h1>Contributing to Tabl<a class="headerlink" href="#contributing-to-tabl" title="Permalink to this headline">¶</a></h1>
+<p>Tabl is perfect already, no more contributions needed. Just kidding!</p>
 <p>See the repository for filing issues and proposing enhancements.</p>
 <p>I’m using pytest, pylint, doctest, sphynx and setuptools.</p>
 <blockquote>
 <div><ul>
 <li><p class="first">pytest</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">tabel</span><span class="o">/</span><span class="n">test</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">tabl</span><span class="o">/</span><span class="n">test</span>
 <span class="n">conda</span> <span class="n">activate</span> <span class="n">py3_6</span>
 <span class="n">pytest</span>
 <span class="n">conda</span> <span class="n">activate</span> <span class="n">py2_7</span>
@@ -474,26 +474,26 @@ True for both read and save methods.</li>
 </div>
 </li>
 <li><p class="first">pylint</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">tabel</span><span class="o">/</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">tabl</span><span class="o">/</span>
 <span class="o">./</span><span class="n">pylint</span><span class="o">.</span><span class="n">sh</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">doctest</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">tabel</span><span class="o">/</span><span class="n">docs</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">tabl</span><span class="o">/</span><span class="n">docs</span>
 <span class="n">make</span> <span class="n">doctest</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">sphynx</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">tabel</span><span class="o">/</span><span class="n">docs</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">tabl</span><span class="o">/</span><span class="n">docs</span>
 <span class="n">make</span> <span class="n">html</span>
 </pre></div>
 </div>
 </li>
 <li><p class="first">setuptools/pypi</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">sdist</span> <span class="n">bdist_wheel</span>
-<span class="n">twine</span> <span class="n">upload</span> <span class="n">dist</span><span class="o">/</span><span class="n">tabel</span><span class="o">-</span><span class="mf">1.1</span><span class="o">.</span><span class="mf">0.</span><span class="o">*</span>
+<span class="n">twine</span> <span class="n">upload</span> <span class="n">dist</span><span class="o">/</span><span class="n">tabl</span><span class="o">-</span><span class="mf">1.1</span><span class="o">.</span><span class="mf">0.</span><span class="o">*</span>
 </pre></div>
 </div>
 </li>
@@ -506,7 +506,7 @@ True for both read and save methods.</li>
 </div>
 <div class="section" id="what-s-in-the-name">
 <h1>What’s in the name?<a class="headerlink" href="#what-s-in-the-name" title="Permalink to this headline">¶</a></h1>
-<p><em>Tabel</em> is Dutch for table (two-dimensional enlisting), <a class="reference external" href="https://nl.wiktionary.org/wiki/tabel">wiktionary</a>. The english word table, as in “dinner
+<p><em>Tabl</em> is Dutch for table (two-dimensional enlisting), <a class="reference external" href="https://nl.wiktionary.org/wiki/tabl">wiktionary</a>. The english word table, as in “dinner
 table”, translates in Dutch to <em>tafel</em>. The Dutch word <em>tafel</em> is an old
 fashioned word for data-table, mostly used for calculation tables which itself
 is old fashioned as well.</p>
@@ -518,11 +518,11 @@ is old fashioned as well.</p>
 <li>cache buffers for faster appending: store temp in list and concatenate to
 array only once we use another method</li>
 <li>allow for (sparse) numpy arrays as an element</li>
-<li>adjust &amp; limit __repr__ width for very wide Tabels in jupyter cell</li>
+<li>adjust &amp; limit __repr__ width for very wide Tabls in jupyter cell</li>
 <li>items() and row_items() and keys() and values() method</li>
 <li>pop_column method</li>
 <li>tox - environment testing</li>
-<li>set subsets of tabels with (subsets) of other tabels, seems logic as __setitem__ is
+<li>set subsets of tabls with (subsets) of other tabls, seems logic as __setitem__ is
 allowed to provide the datatype that should have come from a __getitem__</li>
 <li>datetime column support</li>
 <li>add disk datalogger</li>
@@ -540,7 +540,7 @@ allowed to provide the datatype that should have come from a __getitem__</li>
         <a href="performance.html" class="btn btn-neutral float-right" title="Performance" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="Tabel’s documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral" title="Tabl’s documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

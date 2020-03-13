@@ -15,14 +15,14 @@
 import os
 import sys
 # sys.path.insert(0, os.path.abspath('../../'))
-# sys.path.insert(0, os.path.abspath('../../tabel'))
+# sys.path.insert(0, os.path.abspath('../../tabl'))
 # sys.path.insert(0, os.path.abspath('.'))
 # sys.path.insert(0, os.path.abspath('../'))
 sys.path.insert(0, os.path.abspath('../..'))
-# sys.path.insert(0, os.path.abspath('../tabel'))
+# sys.path.insert(0, os.path.abspath('../tabl'))
 # APP_DIR = os.path.normpath(os.path.join(os.getcwd(), '../..'))
 # sys.path.insert(0, APP_DIR)
-# sys.path.insert(0, os.path.abspath('../tabel'))
+# sys.path.insert(0, os.path.abspath('../tabl'))
 
 # import mock
 #
@@ -32,7 +32,7 @@ sys.path.insert(0, os.path.abspath('../..'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'tabel'
+project = 'tabl'
 copyright = '2018, Bastiaan Bergman'
 author = 'Bastiaan Bergman'
 
@@ -80,9 +80,9 @@ napoleon_use_param = True
 # napoleon_use_rtype = True
 
 doctest_global_setup = """
-from tabel import Tabel
+from tabl import Tabl
 import numpy as np
-tbl = Tabel( [ ["John", "Joe", "Jane"],[1.82,1.65,2.15],[False,False,True] ],columns = ["Name", "Height", "Married"])
+tbl = Tabl( [ ["John", "Joe", "Jane"],[1.82,1.65,2.15],[False,False,True] ],columns = ["Name", "Height", "Married"])
 """
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -144,7 +144,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'tabeldoc'
+htmlhelp_basename = 'tabldoc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -171,7 +171,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'tabel.tex', 'tabel Documentation',
+    (master_doc, 'tabl.tex', 'tabl Documentation',
      'Bastiaan Bergman', 'manual'),
 ]
 
@@ -181,7 +181,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'tabel', 'tabel Documentation',
+    (master_doc, 'tabl', 'tabl Documentation',
      [author], 1)
 ]
 
@@ -192,8 +192,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'tabel', 'tabel Documentation',
-     author, 'tabel', 'One line description of project.',
+    (master_doc, 'tabl', 'tabl Documentation',
+     author, 'tabl', 'One line description of project.',
      'Miscellaneous'),
 ]
 

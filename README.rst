@@ -1,9 +1,9 @@
-About Tabel
+About Tabl
 ============
 
 Lightweight, intuitive and fast data-tables.
 
-*Tabel* data-tables are tables with columns and column names, rows and row
+*Tabl* data-tables are tables with columns and column names, rows and row
 numbers. Indexing and slicing your data is analogous to numpy array's. The
 only real difference is that each column can have its own data type.
 
@@ -13,7 +13,7 @@ Design objectives
 
 I got frustrated with pandas: it's complicated slicing syntax (.loc, .x,
 .iloc, .. etc), it's enforced index column and the Series objects I get when I
-want a numpy array. With Tabel I created the simplified pandas I need for many
+want a numpy array. With Tabl I created the simplified pandas I need for many
 of my data-jobs. Just focussing on simple slicing of multi-datatype tables and
 basic table tools.
 
@@ -41,10 +41,10 @@ Quickstart
 init
 ----
 
-To setup a Tabel:
+To setup a Tabl:
 
->>> from tabl import Tabel
->>> tabl = Tabel([ ["John", "Joe", "Jane"],
+>>> from tabl import Tabl
+>>> tabl = Tabl([ ["John", "Joe", "Jane"],
 ...                [1.82,1.65,2.15],
 ...                [False,False,True]], columns = ["Name", "Height", "Married"])
 >>> tabl
@@ -55,7 +55,7 @@ To setup a Tabel:
  Jane   |     2.15 |         1
 3 rows ['<U4', '<f8', '|b1']
 
-Alternatively, Tabels can be setup from dictionaries, numpy arrays, pandas
+Alternatively, Tabls can be setup from dictionaries, numpy arrays, pandas
 DataFrames, or no data at all. Database connectors usually return data as a list
 of records, the module provides a convenience function to transpose this into a
 list of columns.
@@ -63,7 +63,7 @@ list of columns.
 slice
 -----
 
-Slicing can be done the numpy way, always returning Tabel objects:
+Slicing can be done the numpy way, always returning Tabl objects:
 
 >>> tabl[1:3,[0,2]]
  Name   |   Married
@@ -72,7 +72,7 @@ Slicing can be done the numpy way, always returning Tabel objects:
  Jane   |         1
 2 rows ['<U4', '|b1']
 
-Slices will always return a Tabel except in three distinct cases, when:
+Slices will always return a Tabl except in three distinct cases, when:
 
 1. explicitly one column is requested, a numpy array is returned:
 
@@ -99,7 +99,7 @@ set
 
 Setting elements works the same as slicing:
 
->>> tabl = Tabel({'Name' : ["John", "Joe", "Jane"], 'Height' : [1.82,1.65,2.15], 'Married': [False,False,True]})
+>>> tabl = Tabl({'Name' : ["John", "Joe", "Jane"], 'Height' : [1.82,1.65,2.15], 'Married': [False,False,True]})
 >>> tabl[0,"Name"] = "Jos"
 >>> tabl
  Name   |   Height |   Married
@@ -114,7 +114,7 @@ slice would result into.
 
 Adding columns, works the same as setting elements, just give it a new name:
 
->>> tabl = Tabel({'Name' : ["John", "Joe", "Jane"], 'Height' : [1.82,1.65,2.15], 'Married': [False,False,True]})
+>>> tabl = Tabl({'Name' : ["John", "Joe", "Jane"], 'Height' : [1.82,1.65,2.15], 'Married': [False,False,True]})
 >>> tabl['new'] = [1,2,3]
 >>> tabl
  Name   |   Height |   Married |   new
@@ -126,7 +126,7 @@ Adding columns, works the same as setting elements, just give it a new name:
 
 Or set the whole column to the same value:
 
->>> tabl = Tabel({'Name' : ["John", "Joe", "Jane"], 'Height' : [1.82,1.65,2.15], 'Married': [False,False,True]})
+>>> tabl = Tabl({'Name' : ["John", "Joe", "Jane"], 'Height' : [1.82,1.65,2.15], 'Married': [False,False,True]})
 >>> tabl['new'] = 13
 >>> tabl
  Name   |   Height |   Married |   new
@@ -139,12 +139,12 @@ Or set the whole column to the same value:
 Just like numpy, slices are not actual copies of the data, rather they are
 references.
 
-append Tabel and row
+append Tabl and row
 ---------------------
 
-Tabels can be appended with other Tabels:
+Tabls can be appended with other Tabls:
 
->>> tabl = Tabel({'Name' : ["John", "Joe", "Jane"], 'Height' : [1.82,1.65,2.15], 'Married': [False,False,True]})
+>>> tabl = Tabl({'Name' : ["John", "Joe", "Jane"], 'Height' : [1.82,1.65,2.15], 'Married': [False,False,True]})
 >>> tabl += tabl
 >>> tabl
  Name   |   Height |   Married
@@ -159,7 +159,7 @@ Tabels can be appended with other Tabels:
 
 Or append rows as dictionary:
 
->>> tabl = Tabel({'Name' : ["John", "Joe", "Jane"], 'Height' : [1.82,1.65,2.15], 'Married': [False,False,True]})
+>>> tabl = Tabl({'Name' : ["John", "Joe", "Jane"], 'Height' : [1.82,1.65,2.15], 'Married': [False,False,True]})
 >>> tabl.row_append({'Height':1.81, 'Name':"Jack", 'Married':True})
 >>> tabl
  Name   |   Height |   Married
@@ -177,7 +177,7 @@ instance properties
 Your data is simply stored as a list of numpy arrays and can be accessed or
 manipulated like that (just don't make a mess):
 
->>> tabl = Tabel({'Name' : ["John", "Joe", "Jane"], 'Height' : [1.82,1.65,2.15], 'Married': [False,False,True]})
+>>> tabl = Tabl({'Name' : ["John", "Joe", "Jane"], 'Height' : [1.82,1.65,2.15], 'Married': [False,False,True]})
 >>> tabl.columns
 ['Name', 'Height', 'Married']
 >>> tabl.data        # doctest: +SKIP
@@ -205,9 +205,9 @@ is easy:
 1  1  11
 2  2  12
 
-To make a Tabel from a DataFrame, just supply it to the initialize:
+To make a Tabl from a DataFrame, just supply it to the initialize:
 
->>> tabl = Tabel(df)
+>>> tabl = Tabl(df)
 >>> tabl
    a |   b
 -----+-----
@@ -216,7 +216,7 @@ To make a Tabel from a DataFrame, just supply it to the initialize:
    2 |  12
 3 rows ['<i8', '<i8']
 
-The dict property of Tabel provides a way to make a DataFrame from a Tabel:
+The dict property of Tabl provides a way to make a DataFrame from a Tabl:
 
 >>> df = pd.DataFrame(tabl.dict)
 >>> df
@@ -284,9 +284,9 @@ Tested on:
 * Python 2.7.14; numpy 1.14.0
 
 
-Contributing to Tabel
+Contributing to Tabl
 =====================
-Tabel is perfect already, no more contributions needed. Just kidding!
+Tabl is perfect already, no more contributions needed. Just kidding!
 
 See the repository for filing issues and proposing enhancements.
 
@@ -352,7 +352,7 @@ Just me, Bastiaan Bergman [Bastiaan.Bergman@gmail.com].
 What's in the name?
 ===================
 
-*Tabel* is Dutch for table (two-dimensional enlisting), `wiktionary
+*Tabl* is Dutch for table (two-dimensional enlisting), `wiktionary
 <https://nl.wiktionary.org/wiki/tabl>`_. The english word table, as in "dinner
 table", translates in Dutch to *tafel*. The Dutch word *tafel* is an old
 fashioned word for data-table, mostly used for calculation tables which itself
@@ -366,7 +366,7 @@ ToDo
 * cache buffers for faster appending: store temp in list and concatenate to
   array only once we use another method
 * allow for (sparse) numpy arrays as an element
-* adjust & limit __repr__ width for very wide Tabels in jupyter cell
+* adjust & limit __repr__ width for very wide Tabls in jupyter cell
 * items() and row_items() and keys() and values() method
 * pop_column method
 * tox - environment testing

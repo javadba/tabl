@@ -4,12 +4,12 @@ Cookbook
 
 Initialization
 ===============
-API documentation: :mod:`tabel.Tabel`.
+API documentation: :mod:`tabl.Tabl`.
 
 From a list of lists and a separate list of column names:
 
-  >>> from tabel import Tabel
-  >>> tbl = Tabel([ ["John", "Joe", "Jane"],
+  >>> from tabl import Tabl
+  >>> tbl = Tabl([ ["John", "Joe", "Jane"],
   ...                [1.82,1.65,2.15],
   ...                [False,False,True]], columns = ["Name", "Height", "Married"])
   >>> tbl
@@ -25,7 +25,7 @@ From a dictionary:
   >>> data = {'Name' : ["John", "Joe", "Jane"],
   ...               'Height' : [1.82,1.65,2.15],
   ...               'Married': [False,False,True]}
-  >>> tbl = Tabel(data)
+  >>> tbl = Tabl(data)
   >>> tbl
    Name   |   Height |   Married
   --------+----------+-----------
@@ -36,7 +36,7 @@ From a dictionary:
 
 From numpy arrays:
 
-  >>> Tabel([np.array(["John", "Joe", "Jane"]),
+  >>> Tabl([np.array(["John", "Joe", "Jane"]),
   ...                        np.array([1.82,1.65,2.15]),
   ...                        np.array([False,False,True])])
    0    |    1 |   2
@@ -46,9 +46,9 @@ From numpy arrays:
    Jane | 2.15 |   1
   3 rows ['<U4', '<f8', '|b1']
 
-Or initialize an empty Tabel:
+Or initialize an empty Tabl:
 
-  >>> tbl = Tabel()
+  >>> tbl = Tabl()
   >>> tbl
   <BLANKLINE>
   0 rows []
@@ -58,13 +58,13 @@ Or initialize an empty Tabel:
 
 Slicing
 =======
-API documentation: :py:mod:`tabel.Tabel.__getitem__`.
+API documentation: :py:mod:`tabl.Tabl.__getitem__`.
 
-See the API reference for a detailed description: `Tabel.__getitem__`.
+See the API reference for a detailed description: `Tabl.__getitem__`.
 
 Some common examples:
 
-  >>> tbl = Tabel([ ["John", "Joe", "Jane"],
+  >>> tbl = Tabl([ ["John", "Joe", "Jane"],
   ...                [1.82,1.65,2.15],
   ...                [False,False,True]], columns = ["Name", "Height", "Married"])
   >>> tbl
@@ -127,14 +127,14 @@ Indexing using boolean array's:
 (The ":" can be omitted for columns as well)
 
 If a single index is given for the row or colum position, the returned datatype
-is a row (tuple) or column (array) instead of Tabel:
+is a row (tuple) or column (array) instead of Tabl:
 
   >>> tbl['Married']
   array([False, False,  True])
   >>> tbl[1:2, 'Married']
   array([False])
 
-In all other cases the returned datatype is Tabel, including lists of length one:
+In all other cases the returned datatype is Tabl, including lists of length one:
 
   >>> tbl[:, ['Married']]
      Married
@@ -159,10 +159,10 @@ Finally, single elements are obtained by individually addressing them:
 
 Setting
 =======
-API documentation: :py:mod:`tabel.Tabel.__setitem__`.
+API documentation: :py:mod:`tabl.Tabl.__setitem__`.
 
 There is an detailed description in the API documentation:
-:py:mod:`tabel.Tabel.__setitem__`. Generally, one just provides the datatype and
+:py:mod:`tabl.Tabl.__setitem__`. Generally, one just provides the datatype and
 shape that would have come from the equivalent get call:
 
 Set a single element:
@@ -206,13 +206,13 @@ Slices are references, Slices return new table objects, but their data always
 refers back to the original one as long as that remains in existence. Exceptions
 are:
 
-   * New initialization of Tabel objects copy the data
-   * Boolean or integer indexing of *rows* returns a Tabel object with copied data
+   * New initialization of Tabl objects copy the data
+   * Boolean or integer indexing of *rows* returns a Tabl object with copied data
 
 To show, take a slice from `tbl`, modify its first columns, check out the
 original `tbl`:
 
-   >>> tbl = Tabel({'Name' : ["John", "Joe", "Jane"], 'Height' : [1.82,1.65,2.15], 'Married': [False,False,True]})
+   >>> tbl = Tabl({'Name' : ["John", "Joe", "Jane"], 'Height' : [1.82,1.65,2.15], 'Married': [False,False,True]})
    >>> tbl_b = tbl[:,[1,2]]
    >>> tbl_b[:,0] = [1.3,1.4,1.5]
    >>> tbl
@@ -226,7 +226,7 @@ original `tbl`:
 Column arrays are references too, with the same exceptions as slices. Therefore
 the standard numpy arithmetic can be used:
 
-   >>> tbl = Tabel({'Name' : ["John", "Joe", "Jane"], 'Height' : [1.82,1.65,2.15], 'Married': [False,False,True]})
+   >>> tbl = Tabl({'Name' : ["John", "Joe", "Jane"], 'Height' : [1.82,1.65,2.15], 'Married': [False,False,True]})
    >>> tbl["Height"] *= 2
    >>> tbl
     Name   |   Height |   Married
@@ -240,16 +240,16 @@ the standard numpy arithmetic can be used:
 Appending
 ==========
 
-Appending Tabel
+Appending Tabl
 ----------------
-API documentation: :py:mod:`tabel.Tabel.append`.
+API documentation: :py:mod:`tabl.Tabl.append`.
 
-Tabels can be appended with their append method:
+Tabls can be appended with their append method:
 
-  >>> tbl = Tabel([ ["John", "Joe", "Jane"],
+  >>> tbl = Tabl([ ["John", "Joe", "Jane"],
   ...                [1.82,1.65,2.15],
   ...                [False,False,True]], columns = ["Name", "Height", "Married"])
-  >>> tblb = Tabel([["Bas"],[2.01],[True]], columns=["Name", "Height", "Married"])
+  >>> tblb = Tabl([["Bas"],[2.01],[True]], columns=["Name", "Height", "Married"])
   >>> tbl.append(tblb)
   >>> tbl
    Name   |   Height |   Married
@@ -262,8 +262,8 @@ Tabels can be appended with their append method:
 
 or using the "+=" syntax:
 
-  >>> tblb = Tabel([["Bas"],[2.01],[True]], columns=["Name", "Height", "Married"])
-  >>> tbl = Tabel([ ["John", "Joe", "Jane"],
+  >>> tblb = Tabl([["Bas"],[2.01],[True]], columns=["Name", "Height", "Married"])
+  >>> tbl = Tabl([ ["John", "Joe", "Jane"],
   ...                [1.82,1.65,2.15],
   ...                [False,False,True]], columns = ["Name", "Height", "Married"])
   >>> tbl += tblb
@@ -279,9 +279,9 @@ or using the "+=" syntax:
 
 Appending row
 --------------
-API documentation: :py:mod:`tabel.Tabel.row_append`.
+API documentation: :py:mod:`tabl.Tabl.row_append`.
 
-You can also append a row (dict, list or tuple) at the end of the Tabel, for example:
+You can also append a row (dict, list or tuple) at the end of the Tabl, for example:
 
   >>> tbl.row_append({'Name':"Jack", 'Height':1.82, 'Married':1})
   >>> tbl
@@ -296,11 +296,11 @@ You can also append a row (dict, list or tuple) at the end of the Tabel, for exa
 
 Appending column
 -----------------
-API documentation: :py:mod:`tabel.Tabel.__setitem__`.
+API documentation: :py:mod:`tabl.Tabl.__setitem__`.
 
-To add a new column to the Tabel, just provide a new column name:
+To add a new column to the Tabl, just provide a new column name:
 
-  >>> tbl = Tabel({'Name' : ["John", "Joe", "Jane"], 'Height' : [1.82,1.65,2.15], 'Married': [False,False,True]})
+  >>> tbl = Tabl({'Name' : ["John", "Joe", "Jane"], 'Height' : [1.82,1.65,2.15], 'Married': [False,False,True]})
   >>> tbl["New"] = "Foo"
   >>> tbl["Newer"] = list(range(3))
   >>> tbl
@@ -319,7 +319,7 @@ To add a new column to the Tabel, just provide a new column name:
       provided. If just the colum name is provided, with no indication for row,
       than the whole column is replaced with the column provided.
 
-          >>> tbl = Tabel( [ ["John", "Joe", "Jane"],
+          >>> tbl = Tabl( [ ["John", "Joe", "Jane"],
           ...              [1.82,1.65,2.15],
           ...              [False,False,True] ],
           ...    columns = ["Name", "Height", "Married"])
@@ -349,14 +349,14 @@ To add a new column to the Tabel, just provide a new column name:
 
 Changing column names
 =====================
-API documentation: :mod:`tabel.Tabel.columns`.
+API documentation: :mod:`tabl.Tabl.columns`.
 
 Just manipulate the columns property directly:
 
   >>> data = [ ["John", "Joe", "Jane"],
   ...                [1.82,1.65,2.15],
   ...                [False,False,True]]
-  >>> tbl = Tabel(data, columns=['Name','Height','Married'])
+  >>> tbl = Tabl(data, columns=['Name','Height','Married'])
   >>> tbl
    Name   |   Height |   Married
   --------+----------+-----------
@@ -375,14 +375,14 @@ Just manipulate the columns property directly:
 
 Transposing
 ===========
-API documentation: :py:mod:`tabel.T`.
+API documentation: :py:mod:`tabl.T`.
 
 Data from database connectors often comes in list of records, a convenience
 function is available to make the transpose:
 
-  >>> from tabel import T
+  >>> from tabl import T
   >>> data = [['John', 1.82, False], ['Joe', 1.65, False], ['Jane', 2.15, True]]
-  >>> tbl = Tabel(T(data))
+  >>> tbl = Tabl(T(data))
   >>> tbl
    0    |    1 |   2
   ------+------+-----
@@ -394,14 +394,14 @@ function is available to make the transpose:
 
 Group By
 ========
-API documentation: :py:mod:`tabel.Tabel.group_by`.
+API documentation: :py:mod:`tabl.Tabl.group_by`.
 
 To group by unique elements in a column or unique combinations of elements in
 columns provide the column(s) as a list as the first argument. The second
 argument is a list of tuples for the aggregate functions and their columns:
 
-  >>> from tabel import first
-  >>> tbl = Tabel({'a':[10,20,30, 40]*3, 'b':["100","200"]*6, 'c':[100,200]*6})
+  >>> from tabl import first
+  >>> tbl = Tabl({'a':[10,20,30, 40]*3, 'b':["100","200"]*6, 'c':[100,200]*6})
   >>> tbl
      a |   b |   c
   -----+-----+-----
@@ -433,9 +433,9 @@ first element.
 
 Sorting
 =======
- API documentation: :py:mod:`tabel.Tabel.sort`.
+ API documentation: :py:mod:`tabl.Tabl.sort`.
 
-   >>> tbl = Tabel({'Name' : ["John", "Joe", "Jane"], 'Height' : [1.82,1.65,2.15], 'Married': [False,False,True]})
+   >>> tbl = Tabl({'Name' : ["John", "Joe", "Jane"], 'Height' : [1.82,1.65,2.15], 'Married': [False,False,True]})
    >>> tbl.sort("Name")
    >>> tbl
     Name   |   Height |   Married
@@ -457,13 +457,13 @@ Note that one can use indexing to reorder in any order:
 
 Joining
 =======
-API documentation: :py:mod:`tabel.Tabel.join`.
+API documentation: :py:mod:`tabl.Tabl.join`.
 
-To join another Tabel, provide the Tabe and the column or columns to use as a
+To join another Tabl, provide the Tabe and the column or columns to use as a
 key for joining:
 
-  >>> tbl = Tabel({"a":list(range(4)), "b": ['a','b'] *2})
-  >>> tbl_b = Tabel({"a":list(range(4)), "c": ['d','e'] *2})
+  >>> tbl = Tabl({"a":list(range(4)), "b": ['a','b'] *2})
+  >>> tbl_b = Tabl({"a":list(range(4)), "c": ['d','e'] *2})
   >>> tbl.join(tbl_b, "a")
      a | b_l   | c_r
   -----+-------+-------
@@ -477,11 +477,11 @@ key for joining:
 
 Saving
 ======
-API documentation: :py:mod:`tabel.Tabel.save`.
+API documentation: :py:mod:`tabl.Tabl.save`.
 
 Data can be saved to disk in various formats:
 
-  >>> tbl = Tabel({'Name' : ["John", "Joe", "Jane"], 'Height' : [1.82,1.65,2.15], 'Married': [False,False,True]})
+  >>> tbl = Tabl({'Name' : ["John", "Joe", "Jane"], 'Height' : [1.82,1.65,2.15], 'Married': [False,False,True]})
   >>> tbl.save("test.csv", fmt="csv")
 
 I recommend the numpy native 'npz' format:
@@ -490,12 +490,12 @@ I recommend the numpy native 'npz' format:
 
 Reading
 ========
-API documentation: :py:mod:`tabel.read_tabel`.
+API documentation: :py:mod:`tabl.read_tabl`.
 
 Read from disk:
 
-  >>> from tabel import read_tabel
-  >>> t = read_tabel("test.csv", fmt="csv")
+  >>> from tabl import read_tabl
+  >>> t = read_tabl("test.csv", fmt="csv")
   >>> t
    Name   |   Height | Married
   --------+----------+-----------

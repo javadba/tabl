@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Cookbook &mdash; tabel v1.0 documentation</title>
+  <title>Cookbook &mdash; tabl v1.0 documentation</title>
   
 
   
@@ -48,7 +48,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> tabel
+            <a href="index.html" class="icon icon-home"> tabl
           
 
           
@@ -84,13 +84,13 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="readme.html">About Tabel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="readme.html">About Tabl</a></li>
 <li class="toctree-l1"><a class="reference internal" href="readme.html#install">Install</a></li>
 <li class="toctree-l1"><a class="reference internal" href="readme.html#quickstart">Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="readme.html#resources-getting-help">Resources &amp; getting help</a></li>
 <li class="toctree-l1"><a class="reference internal" href="readme.html#stable-releases">Stable releases</a></li>
 <li class="toctree-l1"><a class="reference internal" href="readme.html#dependencies">Dependencies</a></li>
-<li class="toctree-l1"><a class="reference internal" href="readme.html#contributing-to-tabel">Contributing to Tabel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="readme.html#contributing-to-tabl">Contributing to Tabl</a></li>
 <li class="toctree-l1"><a class="reference internal" href="readme.html#contributors">Contributors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="readme.html#what-s-in-the-name">What’s in the name?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="readme.html#todo">ToDo</a></li>
@@ -101,7 +101,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#setting">Setting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#referencing">Referencing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#appending">Appending</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#appending-tabel">Appending Tabel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#appending-tabl">Appending Tabl</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#appending-row">Appending row</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#appending-column">Appending column</a></li>
 </ul>
@@ -131,7 +131,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">tabel</a>
+          <a href="index.html">tabl</a>
         
       </nav>
 
@@ -185,10 +185,10 @@
 <h1>Cookbook<a class="headerlink" href="#cookbook" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="initialization">
 <h2>Initialization<a class="headerlink" href="#initialization" title="Permalink to this headline">¶</a></h2>
-<p>API documentation: <a class="reference internal" href="api/tabel.html#tabel.Tabel" title="tabel.Tabel"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tabel.Tabel</span></code></a>.</p>
+<p>API documentation: <a class="reference internal" href="api/tabl.html#tabl.Tabl" title="tabl.Tabl"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tabl.Tabl</span></code></a>.</p>
 <p>From a list of lists and a separate list of column names:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">tabel</span> <span class="k">import</span> <span class="n">Tabel</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabel</span><span class="p">([</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">],</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">tabl</span> <span class="k">import</span> <span class="n">Tabl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabl</span><span class="p">([</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">],</span>
 <span class="gp">... </span>               <span class="p">[</span><span class="mf">1.82</span><span class="p">,</span><span class="mf">1.65</span><span class="p">,</span><span class="mf">2.15</span><span class="p">],</span>
 <span class="gp">... </span>               <span class="p">[</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">]],</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="s2">&quot;Height&quot;</span><span class="p">,</span> <span class="s2">&quot;Married&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span>
@@ -204,7 +204,7 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Name&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="s1">&#39;Height&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">1.82</span><span class="p">,</span><span class="mf">1.65</span><span class="p">,</span><span class="mf">2.15</span><span class="p">],</span>
 <span class="gp">... </span>              <span class="s1">&#39;Married&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">]}</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabel</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabl</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span>
 <span class="go"> Name   |   Height |   Married</span>
 <span class="go">--------+----------+-----------</span>
@@ -215,7 +215,7 @@
 </pre></div>
 </div>
 <p>From numpy arrays:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Tabel</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">]),</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Tabl</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">]),</span>
 <span class="gp">... </span>                       <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.82</span><span class="p">,</span><span class="mf">1.65</span><span class="p">,</span><span class="mf">2.15</span><span class="p">]),</span>
 <span class="gp">... </span>                       <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">])])</span>
 <span class="go"> 0    |    1 |   2</span>
@@ -226,8 +226,8 @@
 <span class="go">3 rows [&#39;&lt;U4&#39;, &#39;&lt;f8&#39;, &#39;|b1&#39;]</span>
 </pre></div>
 </div>
-<p>Or initialize an empty Tabel:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabel</span><span class="p">()</span>
+<p>Or initialize an empty Tabl:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabl</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span>
 
 <span class="go">0 rows []</span>
@@ -238,10 +238,10 @@
 </div>
 <div class="section" id="slicing">
 <h2>Slicing<a class="headerlink" href="#slicing" title="Permalink to this headline">¶</a></h2>
-<p>API documentation: <a class="reference internal" href="api/tabel.html#tabel.Tabel.__getitem__" title="tabel.Tabel.__getitem__"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tabel.Tabel.__getitem__</span></code></a>.</p>
-<p>See the API reference for a detailed description: <cite>Tabel.__getitem__</cite>.</p>
+<p>API documentation: <a class="reference internal" href="api/tabl.html#tabl.Tabl.__getitem__" title="tabl.Tabl.__getitem__"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tabl.Tabl.__getitem__</span></code></a>.</p>
+<p>See the API reference for a detailed description: <cite>Tabl.__getitem__</cite>.</p>
 <p>Some common examples:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabel</span><span class="p">([</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">],</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabl</span><span class="p">([</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">],</span>
 <span class="gp">... </span>               <span class="p">[</span><span class="mf">1.82</span><span class="p">,</span><span class="mf">1.65</span><span class="p">,</span><span class="mf">2.15</span><span class="p">],</span>
 <span class="gp">... </span>               <span class="p">[</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">]],</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="s2">&quot;Height&quot;</span><span class="p">,</span> <span class="s2">&quot;Married&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span>
@@ -304,14 +304,14 @@
 </div>
 <p>(The “:” can be omitted for columns as well)</p>
 <p>If a single index is given for the row or colum position, the returned datatype
-is a row (tuple) or column (array) instead of Tabel:</p>
+is a row (tuple) or column (array) instead of Tabl:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span><span class="p">[</span><span class="s1">&#39;Married&#39;</span><span class="p">]</span>
 <span class="go">array([False, False,  True])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Married&#39;</span><span class="p">]</span>
 <span class="go">array([False])</span>
 </pre></div>
 </div>
-<p>In all other cases the returned datatype is Tabel, including lists of length one:</p>
+<p>In all other cases the returned datatype is Tabl, including lists of length one:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span><span class="p">[:,</span> <span class="p">[</span><span class="s1">&#39;Married&#39;</span><span class="p">]]</span>
 <span class="go">   Married</span>
 <span class="go">-----------</span>
@@ -336,9 +336,9 @@ is a row (tuple) or column (array) instead of Tabel:</p>
 </div>
 <div class="section" id="setting">
 <h2>Setting<a class="headerlink" href="#setting" title="Permalink to this headline">¶</a></h2>
-<p>API documentation: <a class="reference internal" href="api/tabel.html#tabel.Tabel.__setitem__" title="tabel.Tabel.__setitem__"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tabel.Tabel.__setitem__</span></code></a>.</p>
+<p>API documentation: <a class="reference internal" href="api/tabl.html#tabl.Tabl.__setitem__" title="tabl.Tabl.__setitem__"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tabl.Tabl.__setitem__</span></code></a>.</p>
 <p>There is an detailed description in the API documentation:
-<a class="reference internal" href="api/tabel.html#tabel.Tabel.__setitem__" title="tabel.Tabel.__setitem__"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tabel.Tabel.__setitem__</span></code></a>. Generally, one just provides the datatype and
+<a class="reference internal" href="api/tabl.html#tabl.Tabl.__setitem__" title="tabl.Tabl.__setitem__"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tabl.Tabl.__setitem__</span></code></a>. Generally, one just provides the datatype and
 shape that would have come from the equivalent get call:</p>
 <p>Set a single element:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;Name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Jos&quot;</span>
@@ -381,13 +381,13 @@ refers back to the original one as long as that remains in existence. Exceptions
 are:</p>
 <blockquote>
 <div><ul class="simple">
-<li>New initialization of Tabel objects copy the data</li>
-<li>Boolean or integer indexing of <em>rows</em> returns a Tabel object with copied data</li>
+<li>New initialization of Tabl objects copy the data</li>
+<li>Boolean or integer indexing of <em>rows</em> returns a Tabl object with copied data</li>
 </ul>
 </div></blockquote>
 <p>To show, take a slice from <cite>tbl</cite>, modify its first columns, check out the
 original <cite>tbl</cite>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabel</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">],</span> <span class="s1">&#39;Height&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">1.82</span><span class="p">,</span><span class="mf">1.65</span><span class="p">,</span><span class="mf">2.15</span><span class="p">],</span> <span class="s1">&#39;Married&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">]})</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabl</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">],</span> <span class="s1">&#39;Height&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">1.82</span><span class="p">,</span><span class="mf">1.65</span><span class="p">,</span><span class="mf">2.15</span><span class="p">],</span> <span class="s1">&#39;Married&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">]})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl_b</span> <span class="o">=</span> <span class="n">tbl</span><span class="p">[:,[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl_b</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.3</span><span class="p">,</span><span class="mf">1.4</span><span class="p">,</span><span class="mf">1.5</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span>
@@ -401,7 +401,7 @@ original <cite>tbl</cite>:</p>
 </div>
 <p>Column arrays are references too, with the same exceptions as slices. Therefore
 the standard numpy arithmetic can be used:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabel</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">],</span> <span class="s1">&#39;Height&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">1.82</span><span class="p">,</span><span class="mf">1.65</span><span class="p">,</span><span class="mf">2.15</span><span class="p">],</span> <span class="s1">&#39;Married&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">]})</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabl</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">],</span> <span class="s1">&#39;Height&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">1.82</span><span class="p">,</span><span class="mf">1.65</span><span class="p">,</span><span class="mf">2.15</span><span class="p">],</span> <span class="s1">&#39;Married&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">]})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span><span class="p">[</span><span class="s2">&quot;Height&quot;</span><span class="p">]</span> <span class="o">*=</span> <span class="mi">2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span>
 <span class="go"> Name   |   Height |   Married</span>
@@ -415,14 +415,14 @@ the standard numpy arithmetic can be used:</p>
 </div>
 <div class="section" id="appending">
 <h2>Appending<a class="headerlink" href="#appending" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="appending-tabel">
-<h3>Appending Tabel<a class="headerlink" href="#appending-tabel" title="Permalink to this headline">¶</a></h3>
-<p>API documentation: <a class="reference internal" href="api/tabel.html#tabel.Tabel.append" title="tabel.Tabel.append"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tabel.Tabel.append</span></code></a>.</p>
-<p>Tabels can be appended with their append method:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabel</span><span class="p">([</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">],</span>
+<div class="section" id="appending-tabl">
+<h3>Appending Tabl<a class="headerlink" href="#appending-tabl" title="Permalink to this headline">¶</a></h3>
+<p>API documentation: <a class="reference internal" href="api/tabl.html#tabl.Tabl.append" title="tabl.Tabl.append"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tabl.Tabl.append</span></code></a>.</p>
+<p>Tabls can be appended with their append method:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabl</span><span class="p">([</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">],</span>
 <span class="gp">... </span>               <span class="p">[</span><span class="mf">1.82</span><span class="p">,</span><span class="mf">1.65</span><span class="p">,</span><span class="mf">2.15</span><span class="p">],</span>
 <span class="gp">... </span>               <span class="p">[</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">]],</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="s2">&quot;Height&quot;</span><span class="p">,</span> <span class="s2">&quot;Married&quot;</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">tblb</span> <span class="o">=</span> <span class="n">Tabel</span><span class="p">([[</span><span class="s2">&quot;Bas&quot;</span><span class="p">],[</span><span class="mf">2.01</span><span class="p">],[</span><span class="kc">True</span><span class="p">]],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="s2">&quot;Height&quot;</span><span class="p">,</span> <span class="s2">&quot;Married&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tblb</span> <span class="o">=</span> <span class="n">Tabl</span><span class="p">([[</span><span class="s2">&quot;Bas&quot;</span><span class="p">],[</span><span class="mf">2.01</span><span class="p">],[</span><span class="kc">True</span><span class="p">]],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="s2">&quot;Height&quot;</span><span class="p">,</span> <span class="s2">&quot;Married&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tblb</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span>
 <span class="go"> Name   |   Height |   Married</span>
@@ -435,8 +435,8 @@ the standard numpy arithmetic can be used:</p>
 </pre></div>
 </div>
 <p>or using the “+=” syntax:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tblb</span> <span class="o">=</span> <span class="n">Tabel</span><span class="p">([[</span><span class="s2">&quot;Bas&quot;</span><span class="p">],[</span><span class="mf">2.01</span><span class="p">],[</span><span class="kc">True</span><span class="p">]],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="s2">&quot;Height&quot;</span><span class="p">,</span> <span class="s2">&quot;Married&quot;</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabel</span><span class="p">([</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">],</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tblb</span> <span class="o">=</span> <span class="n">Tabl</span><span class="p">([[</span><span class="s2">&quot;Bas&quot;</span><span class="p">],[</span><span class="mf">2.01</span><span class="p">],[</span><span class="kc">True</span><span class="p">]],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="s2">&quot;Height&quot;</span><span class="p">,</span> <span class="s2">&quot;Married&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabl</span><span class="p">([</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">],</span>
 <span class="gp">... </span>               <span class="p">[</span><span class="mf">1.82</span><span class="p">,</span><span class="mf">1.65</span><span class="p">,</span><span class="mf">2.15</span><span class="p">],</span>
 <span class="gp">... </span>               <span class="p">[</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">]],</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="s2">&quot;Height&quot;</span><span class="p">,</span> <span class="s2">&quot;Married&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">+=</span> <span class="n">tblb</span>
@@ -453,8 +453,8 @@ the standard numpy arithmetic can be used:</p>
 </div>
 <div class="section" id="appending-row">
 <h3>Appending row<a class="headerlink" href="#appending-row" title="Permalink to this headline">¶</a></h3>
-<p>API documentation: <a class="reference internal" href="api/tabel.html#tabel.Tabel.row_append" title="tabel.Tabel.row_append"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tabel.Tabel.row_append</span></code></a>.</p>
-<p>You can also append a row (dict, list or tuple) at the end of the Tabel, for example:</p>
+<p>API documentation: <a class="reference internal" href="api/tabl.html#tabl.Tabl.row_append" title="tabl.Tabl.row_append"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tabl.Tabl.row_append</span></code></a>.</p>
+<p>You can also append a row (dict, list or tuple) at the end of the Tabl, for example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span><span class="o">.</span><span class="n">row_append</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span><span class="p">:</span><span class="s2">&quot;Jack&quot;</span><span class="p">,</span> <span class="s1">&#39;Height&#39;</span><span class="p">:</span><span class="mf">1.82</span><span class="p">,</span> <span class="s1">&#39;Married&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span>
 <span class="go"> Name   |   Height |   Married</span>
@@ -470,10 +470,10 @@ the standard numpy arithmetic can be used:</p>
 </div>
 <div class="section" id="appending-column">
 <h3>Appending column<a class="headerlink" href="#appending-column" title="Permalink to this headline">¶</a></h3>
-<p>API documentation: <a class="reference internal" href="api/tabel.html#tabel.Tabel.__setitem__" title="tabel.Tabel.__setitem__"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tabel.Tabel.__setitem__</span></code></a>.</p>
-<p>To add a new column to the Tabel, just provide a new column name:</p>
+<p>API documentation: <a class="reference internal" href="api/tabl.html#tabl.Tabl.__setitem__" title="tabl.Tabl.__setitem__"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tabl.Tabl.__setitem__</span></code></a>.</p>
+<p>To add a new column to the Tabl, just provide a new column name:</p>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabel</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">],</span> <span class="s1">&#39;Height&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">1.82</span><span class="p">,</span><span class="mf">1.65</span><span class="p">,</span><span class="mf">2.15</span><span class="p">],</span> <span class="s1">&#39;Married&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">]})</span>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabl</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">],</span> <span class="s1">&#39;Height&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">1.82</span><span class="p">,</span><span class="mf">1.65</span><span class="p">,</span><span class="mf">2.15</span><span class="p">],</span> <span class="s1">&#39;Married&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">]})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span><span class="p">[</span><span class="s2">&quot;New&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Foo&quot;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span><span class="p">[</span><span class="s2">&quot;Newer&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span>
@@ -492,7 +492,7 @@ result, with, however, a noteable difference. Using a slice object
 “:” will change all elements of the column with the new element(s)
 provided. If just the colum name is provided, with no indication for row,
 than the whole column is replaced with the column provided.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabel</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">],</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabl</span><span class="p">(</span> <span class="p">[</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">],</span>
 <span class="gp">... </span>             <span class="p">[</span><span class="mf">1.82</span><span class="p">,</span><span class="mf">1.65</span><span class="p">,</span><span class="mf">2.15</span><span class="p">],</span>
 <span class="gp">... </span>             <span class="p">[</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">]</span> <span class="p">],</span>
 <span class="gp">... </span>   <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="s2">&quot;Height&quot;</span><span class="p">,</span> <span class="s2">&quot;Married&quot;</span><span class="p">])</span>
@@ -523,12 +523,12 @@ while seccond case the type of the Name column changes to <cite>&lt;i8</cite>.</
 </div>
 <div class="section" id="changing-column-names">
 <h2>Changing column names<a class="headerlink" href="#changing-column-names" title="Permalink to this headline">¶</a></h2>
-<p>API documentation: <code class="xref py py-mod docutils literal notranslate"><span class="pre">tabel.Tabel.columns</span></code>.</p>
+<p>API documentation: <code class="xref py py-mod docutils literal notranslate"><span class="pre">tabl.Tabl.columns</span></code>.</p>
 <p>Just manipulate the columns property directly:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">],</span>
 <span class="gp">... </span>               <span class="p">[</span><span class="mf">1.82</span><span class="p">,</span><span class="mf">1.65</span><span class="p">,</span><span class="mf">2.15</span><span class="p">],</span>
 <span class="gp">... </span>               <span class="p">[</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">]]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabel</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span><span class="s1">&#39;Height&#39;</span><span class="p">,</span><span class="s1">&#39;Married&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabl</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span><span class="s1">&#39;Height&#39;</span><span class="p">,</span><span class="s1">&#39;Married&#39;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span>
 <span class="go"> Name   |   Height |   Married</span>
 <span class="go">--------+----------+-----------</span>
@@ -549,12 +549,12 @@ while seccond case the type of the Name column changes to <cite>&lt;i8</cite>.</
 </div>
 <div class="section" id="transposing">
 <h2>Transposing<a class="headerlink" href="#transposing" title="Permalink to this headline">¶</a></h2>
-<p>API documentation: <a class="reference internal" href="api/module.html#tabel.T" title="tabel.T"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tabel.T</span></code></a>.</p>
+<p>API documentation: <a class="reference internal" href="api/module.html#tabl.T" title="tabl.T"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tabl.T</span></code></a>.</p>
 <p>Data from database connectors often comes in list of records, a convenience
 function is available to make the transpose:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">tabel</span> <span class="k">import</span> <span class="n">T</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">tabl</span> <span class="k">import</span> <span class="n">T</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="mf">1.82</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Joe&#39;</span><span class="p">,</span> <span class="mf">1.65</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Jane&#39;</span><span class="p">,</span> <span class="mf">2.15</span><span class="p">,</span> <span class="kc">True</span><span class="p">]]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabel</span><span class="p">(</span><span class="n">T</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabl</span><span class="p">(</span><span class="n">T</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span>
 <span class="go"> 0    |    1 |   2</span>
 <span class="go">------+------+-----</span>
@@ -567,12 +567,12 @@ function is available to make the transpose:</p>
 </div>
 <div class="section" id="group-by">
 <h2>Group By<a class="headerlink" href="#group-by" title="Permalink to this headline">¶</a></h2>
-<p>API documentation: <a class="reference internal" href="api/tabel.html#tabel.Tabel.group_by" title="tabel.Tabel.group_by"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tabel.Tabel.group_by</span></code></a>.</p>
+<p>API documentation: <a class="reference internal" href="api/tabl.html#tabl.Tabl.group_by" title="tabl.Tabl.group_by"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tabl.Tabl.group_by</span></code></a>.</p>
 <p>To group by unique elements in a column or unique combinations of elements in
 columns provide the column(s) as a list as the first argument. The second
 argument is a list of tuples for the aggregate functions and their columns:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">tabel</span> <span class="k">import</span> <span class="n">first</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabel</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">]</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:[</span><span class="s2">&quot;100&quot;</span><span class="p">,</span><span class="s2">&quot;200&quot;</span><span class="p">]</span><span class="o">*</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:[</span><span class="mi">100</span><span class="p">,</span><span class="mi">200</span><span class="p">]</span><span class="o">*</span><span class="mi">6</span><span class="p">})</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">tabl</span> <span class="k">import</span> <span class="n">first</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabl</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:[</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">]</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:[</span><span class="s2">&quot;100&quot;</span><span class="p">,</span><span class="s2">&quot;200&quot;</span><span class="p">]</span><span class="o">*</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:[</span><span class="mi">100</span><span class="p">,</span><span class="mi">200</span><span class="p">]</span><span class="o">*</span><span class="mi">6</span><span class="p">})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span>
 <span class="go">   a |   b |   c</span>
 <span class="go">-----+-----+-----</span>
@@ -605,8 +605,8 @@ first element.</p>
 <div class="section" id="sorting">
 <h2>Sorting<a class="headerlink" href="#sorting" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><p>API documentation: <a class="reference internal" href="api/tabel.html#tabel.Tabel.sort" title="tabel.Tabel.sort"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tabel.Tabel.sort</span></code></a>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabel</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">],</span> <span class="s1">&#39;Height&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">1.82</span><span class="p">,</span><span class="mf">1.65</span><span class="p">,</span><span class="mf">2.15</span><span class="p">],</span> <span class="s1">&#39;Married&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">]})</span>
+<div><p>API documentation: <a class="reference internal" href="api/tabl.html#tabl.Tabl.sort" title="tabl.Tabl.sort"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tabl.Tabl.sort</span></code></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabl</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">],</span> <span class="s1">&#39;Height&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">1.82</span><span class="p">,</span><span class="mf">1.65</span><span class="p">,</span><span class="mf">2.15</span><span class="p">],</span> <span class="s1">&#39;Married&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">]})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s2">&quot;Name&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span>
 <span class="go"> Name   |   Height |   Married</span>
@@ -631,11 +631,11 @@ first element.</p>
 </div>
 <div class="section" id="joining">
 <h2>Joining<a class="headerlink" href="#joining" title="Permalink to this headline">¶</a></h2>
-<p>API documentation: <a class="reference internal" href="api/tabel.html#tabel.Tabel.join" title="tabel.Tabel.join"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tabel.Tabel.join</span></code></a>.</p>
-<p>To join another Tabel, provide the Tabe and the column or columns to use as a
+<p>API documentation: <a class="reference internal" href="api/tabl.html#tabl.Tabl.join" title="tabl.Tabl.join"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tabl.Tabl.join</span></code></a>.</p>
+<p>To join another Tabl, provide the Tabe and the column or columns to use as a
 key for joining:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabel</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)),</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">]</span> <span class="o">*</span><span class="mi">2</span><span class="p">})</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">tbl_b</span> <span class="o">=</span> <span class="n">Tabel</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)),</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">]</span> <span class="o">*</span><span class="mi">2</span><span class="p">})</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabl</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)),</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">]</span> <span class="o">*</span><span class="mi">2</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tbl_b</span> <span class="o">=</span> <span class="n">Tabl</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)),</span> <span class="s2">&quot;c&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">]</span> <span class="o">*</span><span class="mi">2</span><span class="p">})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tbl_b</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span>
 <span class="go">   a | b_l   | c_r</span>
 <span class="go">-----+-------+-------</span>
@@ -649,9 +649,9 @@ key for joining:</p>
 </div>
 <div class="section" id="saving">
 <h2>Saving<a class="headerlink" href="#saving" title="Permalink to this headline">¶</a></h2>
-<p>API documentation: <a class="reference internal" href="api/tabel.html#tabel.Tabel.save" title="tabel.Tabel.save"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tabel.Tabel.save</span></code></a>.</p>
+<p>API documentation: <a class="reference internal" href="api/tabl.html#tabl.Tabl.save" title="tabl.Tabl.save"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tabl.Tabl.save</span></code></a>.</p>
 <p>Data can be saved to disk in various formats:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabel</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">],</span> <span class="s1">&#39;Height&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">1.82</span><span class="p">,</span><span class="mf">1.65</span><span class="p">,</span><span class="mf">2.15</span><span class="p">],</span> <span class="s1">&#39;Married&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">]})</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span> <span class="o">=</span> <span class="n">Tabl</span><span class="p">({</span><span class="s1">&#39;Name&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Joe&quot;</span><span class="p">,</span> <span class="s2">&quot;Jane&quot;</span><span class="p">],</span> <span class="s1">&#39;Height&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mf">1.82</span><span class="p">,</span><span class="mf">1.65</span><span class="p">,</span><span class="mf">2.15</span><span class="p">],</span> <span class="s1">&#39;Married&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">False</span><span class="p">,</span><span class="kc">False</span><span class="p">,</span><span class="kc">True</span><span class="p">]})</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tbl</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;test.csv&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -662,10 +662,10 @@ key for joining:</p>
 </div>
 <div class="section" id="reading">
 <h2>Reading<a class="headerlink" href="#reading" title="Permalink to this headline">¶</a></h2>
-<p>API documentation: <a class="reference internal" href="api/module.html#tabel.read_tabel" title="tabel.read_tabel"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tabel.read_tabel</span></code></a>.</p>
+<p>API documentation: <a class="reference internal" href="api/module.html#tabl.read_tabl" title="tabl.read_tabl"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tabl.read_tabl</span></code></a>.</p>
 <p>Read from disk:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">tabel</span> <span class="k">import</span> <span class="n">read_tabel</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">read_tabel</span><span class="p">(</span><span class="s2">&quot;test.csv&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;csv&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">tabl</span> <span class="k">import</span> <span class="n">read_tabl</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">read_tabl</span><span class="p">(</span><span class="s2">&quot;test.csv&quot;</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;csv&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">t</span>
 <span class="go"> Name   |   Height | Married</span>
 <span class="go">--------+----------+-----------</span>

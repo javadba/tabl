@@ -11,7 +11,7 @@ setuptools.setup(
     version=__version__,
     author="Stephen Boesch",
     author_email="javadba@gmail.com",
-    description="Lightweight, intuitive and fast data-tables. Forked from github.com/BastiaanBergman/tabel",
+    description="Lightweight, intuitive and fast data-tables. Forked from github.com/BastiaanBergman/tabl",
     long_description=long_description,
     long_description_content_type="text/x-rst",
     url="https://github.com/javadba/tabl",

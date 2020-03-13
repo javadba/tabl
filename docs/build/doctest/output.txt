@@ -1,7 +1,7 @@
 Results of doctest builder run on 2019-08-15 15:39:27
 =====================================================
 
-Document: api/tabel
+Document: api/tabl
 -------------------
 1 items passed all tests:
   30 tests in default
